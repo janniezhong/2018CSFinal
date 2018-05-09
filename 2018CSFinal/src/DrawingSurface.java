@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -47,6 +48,8 @@ public class DrawingSurface extends PApplet {
 	
 	public void instructionsPanel() {
 		background(255);
+		stroke(0);
+		text("INSTRUCTIONS", (float)(width *0.5), (float)(height *0.5));
 	}
 	
 	public void cityPanel() {
@@ -64,8 +67,10 @@ public class DrawingSurface extends PApplet {
 			
 			Point p = new Point(mouseX, mouseY);
 			
-			if (a.contains(p) || b.contains(p)) {
+			if (a.contains(p)) {
 				screenNum = 2;
+			} else if (b.contains(p)) {
+				screenNum = 3;
 			}
 			
 		}
