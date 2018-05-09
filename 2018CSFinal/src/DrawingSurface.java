@@ -18,7 +18,10 @@ public class DrawingSurface extends PApplet {
 	public static int screenNum;
 	
 	private IntroPanel intro;
-	private int size;
+	private CityPanel city;
+	private InstructionsPanel instructions;
+
+	
 	public DrawingSurface() {
 		screenNum = 1;
 		runSketch();
@@ -26,6 +29,8 @@ public class DrawingSurface extends PApplet {
 	
 	public void setup() {
 		intro = new IntroPanel();
+		city = new CityPanel();
+		instructions = new InstructionsPanel();
 	}
 	
 	public void draw() {
@@ -37,25 +42,25 @@ public class DrawingSurface extends PApplet {
 		if (screenNum == 1) {
 			intro.draw(this);
 		} else if (screenNum == 2) {
-			instructionsPanel();
+			instructions.draw(this);
 		} else if (screenNum == 3) {
 			initPanel();
 		} else if (screenNum == 4) {
-			cityPanel();
+			city.draw(this);;
 		}
 	
 	}
 	
-	public void introPanel() {
-		editable = loadImage("IntroPic.jpg");
-		editable.resize(width,height); 
-		//background(editable);   
-		noFill();
-		textAlign(CENTER);
-		image(editable, 0, 0);
-
-
-	}
+//	public void introPanel() {
+//		editable = loadImage("IntroPic.jpg");
+//		editable.resize(width,height); 
+//		//background(editable);   
+//		noFill();
+//		textAlign(CENTER);
+//		image(editable, 0, 0);
+//
+//
+//	}
 	
 	public void initPanel() {
 		editable = loadImage("InitPanel.jpg");
@@ -74,19 +79,19 @@ public class DrawingSurface extends PApplet {
 		
 	}
 	
-	public void cityPanel() {
-		editable = loadImage("cityBackground.jpg");
-		editable.resize(width,height);
-		
-		image(editable, 0, 0);
-		
-		stroke(0);
-		strokeWeight(5);
-		for (int i = 0; i < size - 1; i++) {
-			line(0, i * (height / size), width, i * (height / size));
-			line(i * (width / size), 0, i * (width / size), height);
-		}
-	}
+//	public void cityPanel() {
+//		editable = loadImage("cityBackground.jpg");
+//		editable.resize(width,height);
+//		
+//		image(editable, 0, 0);
+//		
+//		stroke(0);
+//		strokeWeight(5);
+//		for (int i = 0; i < size - 1; i++) {
+//			line(0, i * (height / size), width, i * (height / size));
+//			line(i * (width / size), 0, i * (width / size), height);
+//		}
+//	}
 	
 	
 	public void mousePressed() {
