@@ -25,9 +25,11 @@ public class DrawingSurface extends PApplet {
 			mousePressed();
 		}
 		if (screenNum == 1) {
-		introPanel();
+			introPanel();
 		} else if (screenNum == 2) {
 			instructionsPanel();
+		} else if (screenNum == 3) {
+			cityPanel();
 		}
 	
 	}
@@ -45,6 +47,10 @@ public class DrawingSurface extends PApplet {
 	
 	public void instructionsPanel() {
 		background(255);
+	}
+	
+	public void cityPanel() {
+		
 	}
 	
 	
