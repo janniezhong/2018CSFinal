@@ -47,10 +47,19 @@ public class DrawingSurface extends PApplet {
 
 	}
 	
+	public void initPanel() {
+		editable = loadImage("cityBackground.jpg");
+		editable.resize(width,height);
+		
+		image(editable, 0, 0);
+	}
+	
 	public void instructionsPanel() {
 		background(255);
 		stroke(0);
 		text("INSTRUCTIONS", (float)(width *0.5), (float)(height *0.5));
+		image(loadImage("shelbyface.png") /*.resize(w, h)*/, (float)(width *0.25), (float)(height *0.25));
+		
 	}
 	
 	public void cityPanel() {
