@@ -16,6 +16,8 @@ public class DrawingSurface extends PApplet {
 	//private PImage background;
 	private PImage editable;
 	public static int screenNum;
+	
+	private IntroPanel intro;
 	private int size;
 	public DrawingSurface() {
 		screenNum = 1;
@@ -23,7 +25,7 @@ public class DrawingSurface extends PApplet {
 	}
 	
 	public void setup() {
-		//background = loadImage("IntroPic.jpg");
+		intro = new IntroPanel();
 	}
 	
 	public void draw() {
@@ -33,7 +35,7 @@ public class DrawingSurface extends PApplet {
 			mousePressed();
 		}
 		if (screenNum == 1) {
-			introPanel();
+			intro.draw(this);
 		} else if (screenNum == 2) {
 			instructionsPanel();
 		} else if (screenNum == 3) {
