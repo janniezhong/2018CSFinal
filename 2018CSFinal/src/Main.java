@@ -4,7 +4,11 @@ import javax.swing.JFrame;
 
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
-
+/**
+ * 
+ * @author jzhong672
+ * @version 5/7/18
+ */
 public class Main {
 
 	public static void main(String[] args) {
