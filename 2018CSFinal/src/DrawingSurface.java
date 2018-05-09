@@ -5,6 +5,12 @@ import java.awt.Rectangle;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * @author arleenliu
+ * @version 5/9/18
+ *
+ */
 public class DrawingSurface extends PApplet {
 
 	//private PImage background;
