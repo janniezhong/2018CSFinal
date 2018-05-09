@@ -9,6 +9,7 @@ public class DrawingSurface extends PApplet {
 	//private PImage background;
 	private PImage editable;
 	public static int screenNum;
+	private int size;
 	public DrawingSurface() {
 		screenNum = 1;
 		runSketch();
@@ -28,6 +29,8 @@ public class DrawingSurface extends PApplet {
 		introPanel();
 		} else if (screenNum == 2) {
 			instructionsPanel();
+		} else if (screenNum == 3) {
+			cityPanel();
 		}
 	
 	}
@@ -47,6 +50,20 @@ public class DrawingSurface extends PApplet {
 		background(255);
 	}
 	
+	public void cityPanel() {
+		editable = loadImage("cityBackground.jpg");
+		editable.resize(width,height);
+		
+		image(editable, 0, 0);
+		
+		stroke(0);
+		strokeWeight(5);
+		for (int i = 0; i < size - 1; i++) {
+			line(0, i * (height / size), width, i * (height / size));
+			line(i * (width / size), 0, i * (width / size), height);
+		}
+	}
+	
 	
 	public void mousePressed() {
 		if (screenNum == 1) {
@@ -58,8 +75,10 @@ public class DrawingSurface extends PApplet {
 			
 			Point p = new Point(mouseX, mouseY);
 			
-			if (a.contains(p) || b.contains(p)) {
+			if (a.contains(p)) {
 				screenNum = 2;
+			} else if (b.contains(p)) {
+				screenNum = 3;
 			}
 			
 		}
