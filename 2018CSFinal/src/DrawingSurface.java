@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -26,7 +27,7 @@ public class DrawingSurface extends PApplet {
 			mousePressed();
 		}
 		if (screenNum == 1) {
-		introPanel();
+			introPanel();
 		} else if (screenNum == 2) {
 			instructionsPanel();
 		} else if (screenNum == 3) {
@@ -48,6 +49,12 @@ public class DrawingSurface extends PApplet {
 	
 	public void instructionsPanel() {
 		background(255);
+		stroke(0);
+		text("INSTRUCTIONS", (float)(width *0.5), (float)(height *0.5));
+	}
+	
+	public void cityPanel() {
+		
 	}
 	
 	public void cityPanel() {
