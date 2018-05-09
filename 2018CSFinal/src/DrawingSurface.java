@@ -54,10 +54,6 @@ public class DrawingSurface extends PApplet {
 	}
 	
 	public void cityPanel() {
-		
-	}
-	
-	public void cityPanel() {
 		editable = loadImage("cityBackground.jpg");
 		editable.resize(width,height);
 		
