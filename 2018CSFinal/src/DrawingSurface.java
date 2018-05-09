@@ -31,6 +31,8 @@ public class DrawingSurface extends PApplet {
 		} else if (screenNum == 2) {
 			instructionsPanel();
 		} else if (screenNum == 3) {
+			initPanel();
+		} else if (screenNum == 4) {
 			cityPanel();
 		}
 	
@@ -48,10 +50,12 @@ public class DrawingSurface extends PApplet {
 	}
 	
 	public void initPanel() {
-		editable = loadImage("cityBackground.jpg");
+		editable = loadImage("InitPanel.jpg");
 		editable.resize(width,height);
 		
 		image(editable, 0, 0);
+		
+		
 	}
 	
 	public void instructionsPanel() {
@@ -78,21 +82,28 @@ public class DrawingSurface extends PApplet {
 	
 	
 	public void mousePressed() {
+		Point p = new Point(mouseX, mouseY);
+		
 		if (screenNum == 1) {
 			//if (mouseX)
 			
 			Rectangle a = new Rectangle((int) (0.107142857*width), (int) (0.423*height),  (int)(0.2642857*width), (int) (0.05*height));
 			Rectangle b = new Rectangle((int)(0.7*width), (int) (0.423*height), (int) (0.107142857*width), (int) (0.05*height));
-
-			
-			Point p = new Point(mouseX, mouseY);
 			
 			if (a.contains(p)) {
 				screenNum = 2;
 			} else if (b.contains(p)) {
 				screenNum = 3;
 			}
+		
+		}
+		
+		if (screenNum == 3) {
+			Rectangle a = new Rectangle(225, 300, 50, 30);
 			
+			if (a.contains(p)) {
+				screenNum = 4;
+			}
 		}
 	}
 	
