@@ -50,17 +50,6 @@ public class DrawingSurface extends PApplet {
 
 	}
 
-	// public void introPanel() {
-	// editable = loadImage("IntroPic.jpg");
-	// editable.resize(width,height);
-	// //background(editable);
-	// noFill();
-	// textAlign(CENTER);
-	// image(editable, 0, 0);
-	//
-	//
-	// }
-
 	public void initPanel() {
 		editable = loadImage("InitPanel.jpg");
 		editable.resize(width, height);
