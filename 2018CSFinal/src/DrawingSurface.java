@@ -13,29 +13,27 @@ import processing.core.PImage;
  */
 public class DrawingSurface extends PApplet {
 
-	//private PImage background;
+	// private PImage background;
 	private PImage editable;
 	public static int screenNum;
-	
-	private IntroPanel intro;
-	private CityPanel city;
-	private InstructionsPanel instructions;
 
-	
+	private IntroPanel intro; // 1
+	private CityPanel city; // 4
+	private InstructionsPanel instructions; // 2, init == 3
+
 	public DrawingSurface() {
 		screenNum = 1;
 		runSketch();
 	}
-	
+
 	public void setup() {
 		intro = new IntroPanel();
 		city = new CityPanel();
 		instructions = new InstructionsPanel();
 	}
-	
+
 	public void draw() {
-		
-		
+
 		if (mousePressed) {
 			mousePressed();
 		}
@@ -46,79 +44,85 @@ public class DrawingSurface extends PApplet {
 		} else if (screenNum == 3) {
 			initPanel();
 		} else if (screenNum == 4) {
-			city.draw(this);;
+			city.draw(this);
+			;
 		}
-	
+
 	}
-	
-//	public void introPanel() {
-//		editable = loadImage("IntroPic.jpg");
-//		editable.resize(width,height); 
-//		//background(editable);   
-//		noFill();
-//		textAlign(CENTER);
-//		image(editable, 0, 0);
-//
-//
-//	}
-	
+
+	// public void introPanel() {
+	// editable = loadImage("IntroPic.jpg");
+	// editable.resize(width,height);
+	// //background(editable);
+	// noFill();
+	// textAlign(CENTER);
+	// image(editable, 0, 0);
+	//
+	//
+	// }
+
 	public void initPanel() {
 		editable = loadImage("InitPanel.jpg");
-		editable.resize(width,height);
-		
+		editable.resize(width, height);
+
 		image(editable, 0, 0);
-		
-		
+
 	}
-	
-	public void instructionsPanel() {
-		background(255);
-		stroke(0);
-		text("INSTRUCTIONS", (float)(width *0.5), (float)(height *0.5));
-		image(loadImage("shelbyface.png") /*.resize(w, h)*/, (float)(width *0.25), (float)(height *0.25));
-		
-	}
-	
-//	public void cityPanel() {
-//		editable = loadImage("cityBackground.jpg");
-//		editable.resize(width,height);
-//		
-//		image(editable, 0, 0);
-//		
-//		stroke(0);
-//		strokeWeight(5);
-//		for (int i = 0; i < size - 1; i++) {
-//			line(0, i * (height / size), width, i * (height / size));
-//			line(i * (width / size), 0, i * (width / size), height);
-//		}
-//	}
-	
-	
+
+	// public void instructionsPanel() {
+	// background(255);
+	// stroke(0);
+	// text("INSTRUCTIONS", (float)(width *0.5), (float)(height *0.5));
+	// image(loadImage("shelbyface.png") /*.resize(w, h)*/, (float)(width *0.25),
+	// (float)(height *0.25));
+	//
+	// }
+
+	// public void cityPanel() {
+	// editable = loadImage("cityBackground.jpg");
+	// editable.resize(width,height);
+	//
+	// image(editable, 0, 0);
+	//
+	// stroke(0);
+	// strokeWeight(5);
+	// for (int i = 0; i < size - 1; i++) {
+	// line(0, i * (height / size), width, i * (height / size));
+	// line(i * (width / size), 0, i * (width / size), height);
+	// }
+	// }
+
 	public void mousePressed() {
 		Point p = new Point(mouseX, mouseY);
-		
+
 		if (screenNum == 1) {
-			//if (mouseX)
-			
-			Rectangle a = new Rectangle((int) (0.107142857*width), (int) (0.423*height),  (int)(0.2642857*width), (int) (0.05*height));
-			Rectangle b = new Rectangle((int)(0.7*width), (int) (0.423*height), (int) (0.107142857*width), (int) (0.05*height));
-			
+			// if (mouseX)
+
+			Rectangle a = new Rectangle((int) (0.107142857 * width), (int) (0.423 * height), (int) (0.2642857 * width),
+					(int) (0.05 * height));
+			Rectangle b = new Rectangle((int) (0.7 * width), (int) (0.423 * height), (int) (0.107142857 * width),
+					(int) (0.05 * height));
+
 			if (a.contains(p)) {
 				screenNum = 2;
 			} else if (b.contains(p)) {
 				screenNum = 3;
 			}
-		
+
 		}
-		
+
 		if (screenNum == 3) {
-			Rectangle a = new Rectangle(225, 300, 50, 30);
-			
-			if (a.contains(p)) {
+			Rectangle a = new Rectangle(220, 290, 50, 30);
+			Rectangle b = new Rectangle(300, 290, 50, 30);
+			Rectangle c = new Rectangle(380, 290, 50, 30);
+			Rectangle d = new Rectangle(220, 330, 50, 30);
+			Rectangle e = new Rectangle(300, 330, 50, 30);
+			Rectangle f = new Rectangle(380, 330, 50, 30);
+
+			if (a.contains(p) || b.contains(p) || c.contains(p) || d.contains(p) || e.contains(p) || f.contains(p)) {
 				screenNum = 4;
 			}
 		}
 	}
-	
-	
+
 }
