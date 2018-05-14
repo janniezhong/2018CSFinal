@@ -20,6 +20,7 @@ public class DrawingSurface extends PApplet {
 	private IntroPanel intro;
 	private CityPanel city;
 	private InstructionsPanel instructions;
+	private InitPanel init;
 
 	
 	public DrawingSurface() {
@@ -31,6 +32,7 @@ public class DrawingSurface extends PApplet {
 		intro = new IntroPanel();
 		city = new CityPanel();
 		instructions = new InstructionsPanel();
+		init = new InitPanel();
 	}
 	
 	public void draw() {
@@ -44,55 +46,23 @@ public class DrawingSurface extends PApplet {
 		} else if (screenNum == 2) {
 			instructions.draw(this);
 		} else if (screenNum == 3) {
-			initPanel();
+			init.draw(this);
 		} else if (screenNum == 4) {
 			city.draw(this);;
 		}
 	
 	}
 	
-//	public void introPanel() {
-//		editable = loadImage("IntroPic.jpg");
-//		editable.resize(width,height); 
-//		//background(editable);   
-//		noFill();
-//		textAlign(CENTER);
-//		image(editable, 0, 0);
-//
-//
-//	}
 	
 	public void initPanel() {
 		editable = loadImage("InitPanel.jpg");
 		editable.resize(width,height);
-		
 		image(editable, 0, 0);
 		
 		
 	}
 	
-	public void instructionsPanel() {
-		background(255);
-		stroke(0);
-		text("INSTRUCTIONS", (float)(width *0.5), (float)(height *0.5));
-		image(loadImage("shelbyface.png") /*.resize(w, h)*/, (float)(width *0.25), (float)(height *0.25));
-		
-	}
-	
-//	public void cityPanel() {
-//		editable = loadImage("cityBackground.jpg");
-//		editable.resize(width,height);
-//		
-//		image(editable, 0, 0);
-//		
-//		stroke(0);
-//		strokeWeight(5);
-//		for (int i = 0; i < size - 1; i++) {
-//			line(0, i * (height / size), width, i * (height / size));
-//			line(i * (width / size), 0, i * (width / size), height);
-//		}
-//	}
-	
+
 	
 	public void mousePressed() {
 		Point p = new Point(mouseX, mouseY);

@@ -1,3 +1,5 @@
+import processing.core.PApplet;
+
 /**
  * 
  * @author jzhong672
@@ -12,6 +14,8 @@ public abstract class Building {
 	public int getSize() {
 		return size;
 	}
+	
+	public abstract void draw(PApplet drawer);
 	
 	
 	
