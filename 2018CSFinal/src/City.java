@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 
 import buildable.Building;
-
+/**
+ * 
+ * @author jzhong672
+ * @version 5/12/18
+ */
 public class City {
 	
 	private int scenario;

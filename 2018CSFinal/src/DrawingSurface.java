@@ -7,8 +7,8 @@ import processing.core.PImage;
 
 /**
  * 
- * @author arleenliu
- * @version 5/9/18
+ * @author jzhong672
+ * @version 5/16/18
  *
  */
 public class DrawingSurface extends PApplet {

@@ -6,7 +6,7 @@ import processing.core.PImage;
 /**
  * 
  * @author jzhong672
- *	@version 5/8/18
+ *	@version 5/15/18
  */
 public abstract class Building {
 	private int size;

@@ -1,7 +1,11 @@
 package buildable;
 
 import processing.core.PApplet;
-
+/**
+ * 
+ * @author jzhong672
+ * @version 5/16/18
+ */
 public class LosePanel {
 
 	public void draw(PApplet drawer) {

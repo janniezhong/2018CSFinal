@@ -1,6 +1,11 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * @author arleenliu
+ * @version 5/11/18
+ */
 public class CityPanel {
 	
 	private PImage editable;

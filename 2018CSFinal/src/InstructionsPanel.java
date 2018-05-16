@@ -1,5 +1,10 @@
 import processing.core.PApplet;
 
+/**
+ * 
+ * @author arleenliu
+ * @version 5/9/18
+ */
 public class InstructionsPanel {
 
 	public void draw(PApplet drawer) {
