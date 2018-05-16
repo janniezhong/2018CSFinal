@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import buildable.Building;
+
 public class City {
 	
 	ArrayList<Building> buildings = new ArrayList<>();
