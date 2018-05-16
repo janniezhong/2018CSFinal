@@ -1,9 +1,9 @@
 import java.awt.Dimension;
+import java.awt.Point;
 
 import javax.swing.JFrame;
 
 import processing.awt.PSurfaceAWT;
-import processing.core.PApplet;
 /**
  * 
  * @author jzhong672
@@ -19,6 +19,7 @@ public class Main {
 		JFrame window = (JFrame)canvas.getFrame();
 
 
+		window.setLocation(new Point(50, 50));
 		window.setSize(700, 600);
 		window.setMinimumSize(new Dimension(200,200));
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

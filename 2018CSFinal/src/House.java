@@ -2,10 +2,9 @@ import processing.core.PApplet;
 
 public class House extends Building{
 
-	@Override
-	public void draw(PApplet drawer) {
-		// TODO Auto-generated method stub
-		
+	public House(String buildingName, int xLoc, int yLoc) {
+		super(buildingName, xLoc, yLoc);
+	
 	}
 
 }
