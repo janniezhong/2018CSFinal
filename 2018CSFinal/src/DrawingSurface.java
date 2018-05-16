@@ -16,7 +16,6 @@ public class DrawingSurface extends PApplet {
 	// private PImage background;
 	private PImage editable;
 	public static int screenNum;
-	
 
 
 	private IntroPanel intro; // 1
@@ -47,11 +46,12 @@ public class DrawingSurface extends PApplet {
 			instructions.draw(this);
 		} else if (screenNum == 3) {
 			init.draw(this);
+
 		} else if (screenNum == 4) {
 			city.draw(this);
 			
 		}
-
+		
 	}
 
 	public void initPanel() {
@@ -104,13 +104,13 @@ public class DrawingSurface extends PApplet {
 		}
 
 		if (screenNum == 3) {
-			Rectangle a = new Rectangle(220, 290, 50, 30);
-			Rectangle b = new Rectangle(300, 290, 50, 30);
-			Rectangle c = new Rectangle(380, 290, 50, 30);
-			Rectangle d = new Rectangle(220, 330, 50, 30);
-			Rectangle e = new Rectangle(300, 330, 50, 30);
-			Rectangle f = new Rectangle(380, 330, 50, 30);
-
+			Rectangle a = new Rectangle(209, 275, 95, 55);
+			Rectangle b = new Rectangle(372, 270, 90, 64);
+			Rectangle c = new Rectangle(535, 237, 70, 100);
+			Rectangle d = new Rectangle(209, 450, 93, 55);
+			Rectangle e = new Rectangle(380, 450, 88, 55);
+			Rectangle f = new Rectangle(522, 450, 95, 60);		
+			
 			if (a.contains(p) || b.contains(p) || c.contains(p) || d.contains(p) || e.contains(p) || f.contains(p)) {
 				screenNum = 4;
 			}
