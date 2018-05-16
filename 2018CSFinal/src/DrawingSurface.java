@@ -30,7 +30,6 @@ public class DrawingSurface extends PApplet {
 
 	public void setup() {
 		intro = new IntroPanel();
-		city = new CityPanel();
 		instructions = new InstructionsPanel();
 		init = new InitPanel();
 	}
@@ -46,10 +45,18 @@ public class DrawingSurface extends PApplet {
 			instructions.draw(this);
 		} else if (screenNum == 3) {
 			init.draw(this);
+			
+			strokeWeight(2);
+			stroke(255);
+			rect((float)(209/700.0*width), (float)(285/600.0*height), (float)(95/700.0*width), (float)(52/600.0*width));
+			rect((float)(372/700.0*width), (float)(282/600.0*height), (float)(90/700.0*width), (float)(60/600.0*width));
+			rect((float)(535/700.0*width), (float)(243/600.0*height), (float)(70/700.0*width), (float)(90/600.0*width));
+			rect((float)(209/700.0*width), (float)(465/600.0*height), (float)(90/700.0*width), (float)(52/600.0*width));
+			rect((float)(380/700.0*width), (float)(465/600.0*height), (float)(88/700.0*width), (float)(52/600.0*width));
+			rect((float)(522/700.0*width), (float)(465/600.0*height), (float)(95/700.0*width), (float)(52/600.0*width));
 
 		} else if (screenNum == 4) {
 			city.draw(this);
-			
 		}
 		
 	}
@@ -101,9 +108,7 @@ public class DrawingSurface extends PApplet {
 				screenNum = 3;
 			}
 
-		}
-
-		if (screenNum == 3) {
+		} else if (screenNum == 3) {
 			Rectangle a = new Rectangle(209, 275, 95, 55);
 			Rectangle b = new Rectangle(372, 270, 90, 64);
 			Rectangle c = new Rectangle(535, 237, 70, 100);
@@ -111,8 +116,29 @@ public class DrawingSurface extends PApplet {
 			Rectangle e = new Rectangle(380, 450, 88, 55);
 			Rectangle f = new Rectangle(522, 450, 95, 60);		
 			
-			if (a.contains(p) || b.contains(p) || c.contains(p) || d.contains(p) || e.contains(p) || f.contains(p)) {
+			if (a.contains(p)) {
 				screenNum = 4;
+				city = new CityPanel(1);
+			} else if (b.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(2);
+
+			} else if (c.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(3);
+
+			} else if (d.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(4);
+
+			} else if (e.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(5);
+
+			} else if (f.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(6);
+
 			}
 		}
 	}

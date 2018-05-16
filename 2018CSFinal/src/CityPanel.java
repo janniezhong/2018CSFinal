@@ -6,9 +6,11 @@ public class CityPanel {
 	private PImage editable;
 	private City city;
 	private int size;
+	private int scenario;
 
-	public CityPanel() {
+	public CityPanel(int scene) {
 		size = 20;
+		scenario = scene;
 		
 	}
 	
