@@ -2,11 +2,14 @@ import java.util.ArrayList;
 
 public class City {
 	
-	ArrayList<Building> buildings = new ArrayList<>();
-	//int
+	ArrayList<Building> buildings;
+	int[][] grid;
 
-	//public City(int size) {
-		
-	//}
+	public City(int size) {
+		buildings = new ArrayList<>();
+		grid = new int[size][size];
+	}
+	
+	
 	
 }
