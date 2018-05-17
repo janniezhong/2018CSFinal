@@ -1,5 +1,10 @@
 import processing.core.PApplet;
 
+/**
+ * 
+ * @author arleenliu
+ * @version 5/9/18
+ */
 public class InstructionsPanel {
 
 	public void draw(PApplet drawer) {
@@ -7,7 +12,6 @@ public class InstructionsPanel {
 		drawer.stroke(0);
 		drawer.text("INSTRUCTIONS", (float)(drawer.width *0.5), (float)(drawer.height *0.5));
 		drawer.image(drawer.loadImage("shelbyface.png") /*.resize(w, h)*/, (float)(drawer.width *0.25), (float)(drawer.height *0.25));
-		
 	}
 	
 }

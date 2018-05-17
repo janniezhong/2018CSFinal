@@ -1,14 +1,21 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * @author arleenliu
+ * @version 5/11/18
+ */
 public class CityPanel {
 	
 	private PImage editable;
 	private City city;
 	private int size;
+	private int scenario;
 
-	public CityPanel() {
+	public CityPanel(int scene) {
 		size = 20;
+		scenario = scene;
 		
 	}
 	

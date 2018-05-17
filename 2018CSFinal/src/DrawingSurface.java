@@ -7,8 +7,8 @@ import processing.core.PImage;
 
 /**
  * 
- * @author arleenliu
- * @version 5/9/18
+ * @author jzhong672
+ * @version 5/16/18
  *
  */
 public class DrawingSurface extends PApplet {
@@ -17,9 +17,11 @@ public class DrawingSurface extends PApplet {
 	private PImage editable;
 	public static int screenNum;
 
+
 	private IntroPanel intro; // 1
 	private CityPanel city; // 4
-	private InstructionsPanel instructions; // 2, init == 3
+	private InstructionsPanel instructions; // 2
+	private InitPanel init;// 3
 
 	public DrawingSurface() {
 		screenNum = 1;
@@ -28,8 +30,8 @@ public class DrawingSurface extends PApplet {
 
 	public void setup() {
 		intro = new IntroPanel();
-		city = new CityPanel();
 		instructions = new InstructionsPanel();
+		init = new InitPanel();
 	}
 
 	public void draw() {
@@ -42,18 +44,26 @@ public class DrawingSurface extends PApplet {
 		} else if (screenNum == 2) {
 			instructions.draw(this);
 		} else if (screenNum == 3) {
-			initPanel();
+			init.draw(this);
+			
+			strokeWeight(2);
+			stroke(255);
+			rect((float)(209/700.0*width), (float)(285/600.0*height), (float)(95/700.0*width), (float)(52/600.0*width));
+			rect((float)(372/700.0*width), (float)(282/600.0*height), (float)(90/700.0*width), (float)(60/600.0*width));
+			rect((float)(535/700.0*width), (float)(243/600.0*height), (float)(70/700.0*width), (float)(90/600.0*width));
+			rect((float)(209/700.0*width), (float)(465/600.0*height), (float)(90/700.0*width), (float)(52/600.0*width));
+			rect((float)(380/700.0*width), (float)(465/600.0*height), (float)(88/700.0*width), (float)(52/600.0*width));
+			rect((float)(522/700.0*width), (float)(465/600.0*height), (float)(95/700.0*width), (float)(52/600.0*width));
+
 		} else if (screenNum == 4) {
 			city.draw(this);
-			;
 		}
-
+		
 	}
 
 	public void initPanel() {
 		editable = loadImage("InitPanel.jpg");
-		editable.resize(width, height);
-
+		editable.resize(width,height);
 		image(editable, 0, 0);
 
 	}
@@ -98,18 +108,37 @@ public class DrawingSurface extends PApplet {
 				screenNum = 3;
 			}
 
-		}
-
-		if (screenNum == 3) {
-			Rectangle a = new Rectangle(220, 290, 50, 30);
-			Rectangle b = new Rectangle(300, 290, 50, 30);
-			Rectangle c = new Rectangle(380, 290, 50, 30);
-			Rectangle d = new Rectangle(220, 330, 50, 30);
-			Rectangle e = new Rectangle(300, 330, 50, 30);
-			Rectangle f = new Rectangle(380, 330, 50, 30);
-
-			if (a.contains(p) || b.contains(p) || c.contains(p) || d.contains(p) || e.contains(p) || f.contains(p)) {
+		} else if (screenNum == 3) {
+			Rectangle a = new Rectangle(209, 275, 95, 55);
+			Rectangle b = new Rectangle(372, 270, 90, 64);
+			Rectangle c = new Rectangle(535, 237, 70, 100);
+			Rectangle d = new Rectangle(209, 450, 93, 55);
+			Rectangle e = new Rectangle(380, 450, 88, 55);
+			Rectangle f = new Rectangle(522, 450, 95, 60);		
+			
+			if (a.contains(p)) {
 				screenNum = 4;
+				city = new CityPanel(1);
+			} else if (b.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(2);
+
+			} else if (c.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(3);
+
+			} else if (d.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(4);
+
+			} else if (e.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(5);
+
+			} else if (f.contains(p)) {
+				screenNum = 4;
+				city = new CityPanel(6);
+
 			}
 		}
 	}
