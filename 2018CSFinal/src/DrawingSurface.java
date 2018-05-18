@@ -16,22 +16,26 @@ public class DrawingSurface extends PApplet {
 	// private PImage background;
 	private PImage editable;
 	public static int screenNum;
+	private boolean justPressed;
 
 
 	private IntroPanel intro; // 1
 	private CityPanel city; // 4
 	private InstructionsPanel instructions; // 2
 	private InitPanel init;// 3
+	private ShopPanel shop; //5
 
 	public DrawingSurface() {
 		screenNum = 1;
 		runSketch();
+		justPressed = false;
 	}
 
 	public void setup() {
 		intro = new IntroPanel();
 		instructions = new InstructionsPanel();
 		init = new InitPanel();
+		shop = new ShopPanel();
 	}
 
 	public void draw() {
@@ -45,18 +49,26 @@ public class DrawingSurface extends PApplet {
 			instructions.draw(this);
 		} else if (screenNum == 3) {
 			init.draw(this);
-			
-			strokeWeight(2);
-			stroke(255);
-			rect((float)(209/700.0*width), (float)(285/600.0*height), (float)(95/700.0*width), (float)(52/600.0*width));
-			rect((float)(372/700.0*width), (float)(282/600.0*height), (float)(90/700.0*width), (float)(60/600.0*width));
-			rect((float)(535/700.0*width), (float)(243/600.0*height), (float)(70/700.0*width), (float)(90/600.0*width));
-			rect((float)(209/700.0*width), (float)(465/600.0*height), (float)(90/700.0*width), (float)(52/600.0*width));
-			rect((float)(380/700.0*width), (float)(465/600.0*height), (float)(88/700.0*width), (float)(52/600.0*width));
-			rect((float)(522/700.0*width), (float)(465/600.0*height), (float)(95/700.0*width), (float)(52/600.0*width));
-
 		} else if (screenNum == 4) {
 			city.draw(this);
+			
+			PImage shop = loadImage("shopButton.png");
+			shop.resize(width/20, height/20);
+			image(shop, (float)(width*19/20.0), (float)(height*19/20.0));
+			
+		
+			
+		} else if (screenNum == 5) {
+			
+			shop.draw(this);
+			
+
+			stroke(0);
+			strokeWeight(2);
+	
+			rect((int)(630/700.0*width), (int)(555/600.0*height), (int)(60/700.0*width), (int)(25/600.0*height));
+
+			
 		}
 		
 	}
@@ -92,6 +104,9 @@ public class DrawingSurface extends PApplet {
 	// }
 
 	public void mousePressed() {
+		
+		
+		
 		Point p = new Point(mouseX, mouseY);
 
 		if (screenNum == 1) {
@@ -108,13 +123,23 @@ public class DrawingSurface extends PApplet {
 				screenNum = 3;
 			}
 
-		} else if (screenNum == 3) {
-			Rectangle a = new Rectangle(209, 275, 95, 55);
-			Rectangle b = new Rectangle(372, 270, 90, 64);
-			Rectangle c = new Rectangle(535, 237, 70, 100);
-			Rectangle d = new Rectangle(209, 450, 93, 55);
-			Rectangle e = new Rectangle(380, 450, 88, 55);
-			Rectangle f = new Rectangle(522, 450, 95, 60);		
+		} else if (screenNum == 2) {
+			
+			Rectangle a = new Rectangle((int)(630/700.0*width), (int)(550/600.0*height), (int)(60/700.0*width), (int)(30/600.0*height));
+			
+			if (a.contains(p)) {
+				screenNum = 1;
+			}
+			
+		} else if (screenNum == 3) {			
+			
+			Rectangle a = new Rectangle((int)(209/700.0*width), (int)(285/600.0*height), (int)(95/700.0*width), (int)(52/600.0*width));
+			Rectangle b = new Rectangle((int)(372/700.0*width), (int)(282/600.0*height), (int)(90/700.0*width), (int)(60/600.0*width));
+			Rectangle c = new Rectangle((int)(535/700.0*width), (int)(243/600.0*height), (int)(70/700.0*width), (int)(90/600.0*width));
+			Rectangle d = new Rectangle((int)(209/700.0*width), (int)(465/600.0*height), (int)(90/700.0*width), (int)(52/600.0*width));
+			Rectangle e = new Rectangle((int)(380/700.0*width), (int)(465/600.0*height), (int)(88/700.0*width), (int)(52/600.0*width));
+			Rectangle f = new Rectangle((int)(522/700.0*width), (int)(465/600.0*height), (int)(95/700.0*width), (int)(52/600.0*width));
+
 			
 			if (a.contains(p)) {
 				screenNum = 4;
@@ -139,6 +164,18 @@ public class DrawingSurface extends PApplet {
 				screenNum = 4;
 				city = new CityPanel(6);
 
+			}
+		} else if (screenNum == 4) {
+			Rectangle a = new Rectangle((int)(width*19/20.0),(int)(height*19/20.0), width/20, height/20);
+			
+			if (a.contains(p)) {
+				screenNum = 5;
+			}
+		} else if (screenNum == 5) {
+			Rectangle a = new Rectangle((int)(630/700.0*width), (int)(555/600.0*height), (int)(60/700.0*width), (int)(25/600.0*height));
+
+			if (a.contains(p)) {
+				screenNum = 4;
 			}
 		}
 	}
