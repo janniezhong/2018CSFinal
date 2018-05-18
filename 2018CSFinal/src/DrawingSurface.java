@@ -40,9 +40,12 @@ public class DrawingSurface extends PApplet {
 
 	public void draw() {
 
+		
 		if (mousePressed) {
-			mousePressed();
+			mouseClicked();
+			
 		}
+	
 		if (screenNum == 1) {
 			intro.draw(this);
 		} else if (screenNum == 2) {
@@ -53,8 +56,8 @@ public class DrawingSurface extends PApplet {
 			city.draw(this);
 			
 			PImage shop = loadImage("shopButton.png");
-			shop.resize(width/20, height/20);
-			image(shop, (float)(width*19/20.0), (float)(height*19/20.0));
+			shop.resize(width/10, height/10);
+			image(shop, (float)(width*9/10.0), (float)(height*9/10.0));
 			
 		
 			
@@ -103,7 +106,7 @@ public class DrawingSurface extends PApplet {
 	// }
 	// }
 
-	public void mousePressed() {
+	public void mouseClicked() {
 		
 		
 		
@@ -120,8 +123,12 @@ public class DrawingSurface extends PApplet {
 			if (a.contains(p)) {
 				screenNum = 2;
 			} else if (b.contains(p)) {
-				screenNum = 3;
+				screenNum = 3;		
+				delay(500);
+
 			}
+			
+		
 
 		} else if (screenNum == 2) {
 			
@@ -166,7 +173,7 @@ public class DrawingSurface extends PApplet {
 
 			}
 		} else if (screenNum == 4) {
-			Rectangle a = new Rectangle((int)(width*19/20.0),(int)(height*19/20.0), width/20, height/20);
+			Rectangle a = new Rectangle((int)(width*9/10.0),(int)(height*9/10.0), width/10, height/10);
 			
 			if (a.contains(p)) {
 				screenNum = 5;
