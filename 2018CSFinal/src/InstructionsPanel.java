@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 /**
  * 
@@ -6,12 +7,14 @@ import processing.core.PApplet;
  * @version 5/9/18
  */
 public class InstructionsPanel {
+	private PImage editable;
 
 	public void draw(PApplet drawer) {
+		editable = drawer.loadImage("InstructionPanel.jpg");
+		editable.resize(drawer.width,drawer.height);
+		
 		drawer.background(255);
-		drawer.stroke(0);
-		drawer.text("INSTRUCTIONS", (float)(drawer.width *0.5), (float)(drawer.height *0.5));
-		drawer.image(drawer.loadImage("shelbyface.png") /*.resize(w, h)*/, (float)(drawer.width *0.25), (float)(drawer.height *0.25));
+		drawer.image(editable, 0f, 0f);
 	}
 	
 }
