@@ -15,9 +15,9 @@ public class Neighborhood extends Building{
 	//should pass "house" into the constructor
 	public Neighborhood(int xLoc, int yLoc) {
 		super("neighborhood.png", xLoc, yLoc);
-		super.setSize(2);
-		super.setRevenue(0);
-		super.setHappiness(2);
+		super.setSize(3);
+		super.setRevenue(-1);
+		super.setHappiness(4);
 	}
 	
 //	@Override

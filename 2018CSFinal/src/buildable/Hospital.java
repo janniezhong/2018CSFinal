@@ -10,7 +10,7 @@ public class Hospital extends Building{
 		super(buildingName, xLoc, yLoc);
 		super.setSize(3);
 		super.setRevenue(1);
-		super.setHappiness(3);
+		super.setHappiness(6);
 
 	}
 	
