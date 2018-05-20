@@ -7,7 +7,7 @@ package buildable;
 public class Factory extends Building{
 
 	public Factory(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+		super("factory.gif", xLoc, yLoc);
 		super.setSize(3);
 		super.setRevenue(7);
 		super.setHappiness(-3);

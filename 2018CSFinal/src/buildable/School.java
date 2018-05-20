@@ -7,7 +7,7 @@ package buildable;
 public class School extends Building{
 
 	public School(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+		super("school.jpg", xLoc, yLoc);
 		super.setSize(3);
 		super.setRevenue(-2);
 		super.setHappiness(7);

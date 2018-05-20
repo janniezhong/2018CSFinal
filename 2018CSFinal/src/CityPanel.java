@@ -10,7 +10,7 @@ public class CityPanel {
 
 	private PImage editable;
 	private City city;
-	private int size;
+	public static int size;
 	private int scenario;
 
 	public CityPanel(int scene) {
