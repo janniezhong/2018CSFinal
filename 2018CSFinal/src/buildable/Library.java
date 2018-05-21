@@ -16,6 +16,7 @@ public class Library extends Building{
 		super("library.gif");
 		super.setRevenue(1);
 		super.setHappiness(4);
+		super.setCost(25);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

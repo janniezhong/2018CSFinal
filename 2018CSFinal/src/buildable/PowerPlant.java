@@ -14,8 +14,9 @@ public class PowerPlant extends Building{
 
 	public PowerPlant() {
 		super("powerplant.jpg");
-		super.setRevenue(8);
-		super.setHappiness(-4);
+		super.setRevenue(3);
+		super.setHappiness(5);
+		super.setCost(30);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

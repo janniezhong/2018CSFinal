@@ -16,6 +16,7 @@ public class GroceryStore extends Building{
 		super("grocerystore.jpg");
 		super.setRevenue(1);
 		super.setHappiness(3);
+		super.setCost(20);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

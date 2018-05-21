@@ -16,6 +16,7 @@ public class GovBuilding extends Building{
 		super("govbuilding.jpg");
 		super.setRevenue(4);
 		super.setHappiness(-6);
+		super.setCost(25);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

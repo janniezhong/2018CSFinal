@@ -16,6 +16,7 @@ public class GeneralStore extends Building{
 		super("generalstore.jpg");
 		super.setRevenue(2);
 		super.setHappiness(3);
+		super.setCost(25);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

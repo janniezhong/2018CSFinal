@@ -16,6 +16,7 @@ public class Plaza extends Building{
 		super("plaza.jpg");
 		super.setRevenue(4);
 		super.setHappiness(2);
+		super.setCost(30);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

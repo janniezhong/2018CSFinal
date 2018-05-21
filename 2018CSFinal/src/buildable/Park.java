@@ -16,6 +16,7 @@ public class Park extends Building{
 		super("park.jpg");
 		super.setRevenue(-4);
 		super.setHappiness(9);
+		super.setCost(30);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

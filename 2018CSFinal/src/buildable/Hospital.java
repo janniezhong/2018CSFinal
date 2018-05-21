@@ -16,6 +16,7 @@ public class Hospital extends Building{
 		super("hospital.png");
 		super.setRevenue(1);
 		super.setHappiness(6);
+		super.setCost(30);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

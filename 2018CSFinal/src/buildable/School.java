@@ -16,6 +16,7 @@ public class School extends Building{
 		super("school.jpg");
 		super.setRevenue(-2);
 		super.setHappiness(7);
+		super.setCost(25);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();
