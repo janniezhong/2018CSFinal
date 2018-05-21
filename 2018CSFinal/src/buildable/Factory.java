@@ -16,6 +16,7 @@ public class Factory extends Building{
 		super("factory.gif");
 		super.setRevenue(7);
 		super.setHappiness(-3);
+		super.setCost(30);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

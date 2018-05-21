@@ -24,6 +24,10 @@ public abstract class Building {
 		revenue = x;
 	}
 	
+	public void setCost(int x) {
+		costToBuy = x;
+	}
+	
 	public void setHappiness(int x) {
 		happiness = x;
 	}

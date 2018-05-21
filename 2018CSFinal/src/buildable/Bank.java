@@ -17,6 +17,7 @@ public class Bank extends Building{
 		super("bank.png");
 		super.setRevenue(6);
 		super.setHappiness(-2);
+		super.setCost(25);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();

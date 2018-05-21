@@ -14,8 +14,9 @@ public class GasStation extends Building{
 
 	public GasStation() {
 		super("gasstation.jpg");
-		super.setRevenue(1);
-		super.setHappiness(4);
+		super.setRevenue(4);
+		super.setHappiness(1);
+		super.setCost(20);
 		
 		posBuildings = new ArrayList<>();
 		negBuildings = new ArrayList<>();
