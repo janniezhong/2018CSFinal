@@ -1,16 +1,25 @@
 package buildable;
+
+import java.util.ArrayList;
+
 /**
  * 
  * @author jzhong672
  * @version 5/15/18
  */
 public class GovBuilding extends Building{
+	
+	private ArrayList<Building> posBuildings;
+	private ArrayList<Building> negBuildings;
 
 	public GovBuilding(String buildingName, int xLoc, int yLoc) {
 		super(buildingName, xLoc, yLoc);
 		super.setSize(2);
 		super.setRevenue(4);
 		super.setHappiness(-6);
+		
+		posBuildings = new ArrayList<>();
+		negBuildings = new ArrayList<>();
 
 	}
 	

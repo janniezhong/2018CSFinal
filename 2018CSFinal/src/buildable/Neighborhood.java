@@ -1,4 +1,6 @@
 package buildable;
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -11,6 +13,8 @@ import processing.core.PImage;
 public class Neighborhood extends Building{
 
 	private PImage img;
+	private ArrayList<Building> posBuildings;
+	private ArrayList<Building> negBuildings;
 	
 	//should pass "house" into the constructor
 	public Neighborhood(int xLoc, int yLoc) {
@@ -18,6 +22,9 @@ public class Neighborhood extends Building{
 		super.setSize(3);
 		super.setRevenue(-1);
 		super.setHappiness(4);
+		
+		posBuildings = new ArrayList<>();
+		negBuildings = new ArrayList<>();
 	}
 	
 //	@Override
