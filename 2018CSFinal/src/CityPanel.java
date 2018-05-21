@@ -12,6 +12,8 @@ public class CityPanel {
 	private City city;
 	public static int size;
 	private int scenario;
+	
+	private int nextBuilding;
 
 	public CityPanel(int scene) {
 		size = 10;
@@ -31,5 +33,10 @@ public class CityPanel {
 			drawer.line(0, i * (drawer.height / size), drawer.width, i * (drawer.height / size));
 			drawer.line(i * (drawer.width / size), 0, i * (drawer.width / size), drawer.height);
 		}
+	}
+	
+	
+	public void buildingToAdd(int i) {
+		nextBuilding = i;
 	}
 }

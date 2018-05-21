@@ -6,8 +6,8 @@ package buildable;
  */
 public class PowerPlant extends Building{
 
-	public PowerPlant(String buildingName, int xLoc, int yLoc) {
-		super("powerplant.ipg", xLoc, yLoc);
+	public PowerPlant() {
+		super("powerplant.jpg");
 		super.setSize(2);
 		super.setRevenue(8);
 		super.setHappiness(-4);

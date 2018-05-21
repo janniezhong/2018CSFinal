@@ -6,8 +6,8 @@ package buildable;
  */
 public class GovBuilding extends Building{
 
-	public GovBuilding(String buildingName, int xLoc, int yLoc) {
-		super("govbuilding.jpg", xLoc, yLoc);
+	public GovBuilding() {
+		super("govbuilding.jpg");
 		super.setSize(2);
 		super.setRevenue(4);
 		super.setHappiness(-6);

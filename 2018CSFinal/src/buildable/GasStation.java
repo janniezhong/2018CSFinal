@@ -6,8 +6,8 @@ package buildable;
  */
 public class GasStation extends Building{
 
-	public GasStation(String buildingName, int xLoc, int yLoc) {
-		super("gasstation.jpg", xLoc, yLoc);
+	public GasStation() {
+		super("gasstation.jpg");
 		super.setSize(1);
 		super.setRevenue(1);
 		super.setHappiness(4);

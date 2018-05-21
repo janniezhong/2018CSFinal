@@ -6,8 +6,8 @@ package buildable;
  */
 public class GroceryStore extends Building{
 
-	public GroceryStore(String buildingImg, int xLoc, int yLoc) {
-		super("grocerystore.jpg", xLoc, yLoc);
+	public GroceryStore() {
+		super("grocerystore.jpg");
 		super.setSize(2);
 		super.setRevenue(1);
 		super.setHappiness(3);

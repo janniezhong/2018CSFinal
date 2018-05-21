@@ -5,11 +5,10 @@ import java.awt.Rectangle;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-
 /**
  * 
  * @author jzhong672
- * @version 5/16/18
+ * @version 5/20/18
  *
  */
 public class DrawingSurface extends PApplet {
@@ -18,6 +17,8 @@ public class DrawingSurface extends PApplet {
 	private PImage editable;
 	public static int screenNum;
 	private int pressedTimes;
+	private int buildingSelect;
+	private int nextBuilding;
 
 
 	private IntroPanel intro; // 1
@@ -30,6 +31,7 @@ public class DrawingSurface extends PApplet {
 		screenNum = 1;
 		runSketch();
 		pressedTimes = 0;
+		buildingSelect = -1;
 	}
 
 	public void setup() {
@@ -38,12 +40,15 @@ public class DrawingSurface extends PApplet {
 		init = new InitPanel();
 		shop = new ShopPanel();
 
+		
+		
+		
 	}
 
 	public void draw() {
 		if (mousePressed && pressedTimes > 0) {
 			mouseClicked();
-			pressedTimes = 0;
+			//pressedTimes = 0;
 		}
 
 		
@@ -66,7 +71,7 @@ public class DrawingSurface extends PApplet {
 
 			shop.draw(this);
 
-
+			shop.highlight(buildingSelect, this);
 			stroke(0);
 			strokeWeight(2);
 
@@ -180,13 +185,40 @@ public class DrawingSurface extends PApplet {
 			}
 			
 		} else if (screenNum == 5) {
+			
+			int horiz = (int) (width * 3.0 / 20);
+			int vert = (int) (height * 7.0 / 24);
+			for (int i = 0; i < 13; i++) {
+
+				if (horiz > width * 8.5 / 10) {
+					vert += height / 7;
+					horiz = (int) (width * 3.0 / 20);
+				}
+
+				
+				Rectangle b = new Rectangle(horiz, vert, width / 10, height / 10);
+
+				if(b.contains(p)) {
+					buildingSelect = i;
+				}
+				// drawer.strokeWeight(10);
+				// drawer.rect(horiz, vert, drawer.width/10, drawer.height/10);
+
+				horiz += width * 3.0 / 10;
+
+			}
+			
 			Rectangle a = new Rectangle((int)(630/700.0*width), (int)(25/600.0*height), (int)(50/700.0*width), (int)(25/600.0*height));
 
 			if (a.contains(p)) {
 				screenNum = 4;
-				//delay(700);
+				
+				buildingSelect = -1;
 
 			}
+			
+			
+			
 
 		}
 	}

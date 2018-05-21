@@ -6,8 +6,8 @@ package buildable;
  */
 public class Plaza extends Building{
 
-	public Plaza(String buildingName, int xLoc, int yLoc) {
-		super("plaza.jpg", xLoc, yLoc);
+	public Plaza() {
+		super("plaza.jpg");
 		super.setSize(4);
 		super.setRevenue(4);
 		super.setHappiness(2);

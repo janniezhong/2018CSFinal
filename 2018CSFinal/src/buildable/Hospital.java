@@ -6,8 +6,8 @@ package buildable;
  */
 public class Hospital extends Building{
 	
-	public Hospital(String buildingName, int xLoc, int yLoc) {
-		super("hospital.png", xLoc, yLoc);
+	public Hospital() {
+		super("hospital.png");
 		super.setSize(3);
 		super.setRevenue(1);
 		super.setHappiness(6);
