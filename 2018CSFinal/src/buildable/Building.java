@@ -16,10 +16,8 @@ public abstract class Building {
 	private int revenue;
 	private int x, y;
 	
-	public Building (String buildingName, int xLoc, int yLoc) {
+	public Building (String buildingName) {
 		imageLoc = buildingName;
-		x = xLoc;
-		y = yLoc;
 	}
 	
 	public int getSize() {
@@ -39,8 +37,8 @@ public abstract class Building {
 		happiness = x;
 	}
 
-	public String getImageName() {
-		return imageLoc;
+	public PImage getImage(PApplet drawer) {
+		return drawer.loadImage(imageLoc);
 	}
 	
 	

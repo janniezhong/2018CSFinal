@@ -12,8 +12,8 @@ public class Factory extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 
-	public Factory(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public Factory() {
+		super("factory.gif");
 		super.setSize(3);
 		super.setRevenue(7);
 		super.setHappiness(-3);

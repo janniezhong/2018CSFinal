@@ -12,8 +12,8 @@ public class GeneralStore extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 
-	public GeneralStore(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public GeneralStore() {
+		super("generalstore.jpg");
 		super.setSize(2);
 		super.setRevenue(2);
 		super.setHappiness(3);

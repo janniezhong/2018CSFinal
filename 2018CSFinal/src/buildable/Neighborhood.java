@@ -17,8 +17,8 @@ public class Neighborhood extends Building{
 	private ArrayList<Building> negBuildings;
 	
 	//should pass "house" into the constructor
-	public Neighborhood(int xLoc, int yLoc) {
-		super("neighborhood.png", xLoc, yLoc);
+	public Neighborhood() {
+		super("neighborhood.png");
 		super.setSize(3);
 		super.setRevenue(-1);
 		super.setHappiness(4);

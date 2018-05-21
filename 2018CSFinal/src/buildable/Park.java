@@ -12,8 +12,8 @@ public class Park extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 	
-	public Park(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public Park() {
+		super("park.jpg");
 		super.setSize(4);
 		super.setRevenue(-4);
 		super.setHappiness(9);

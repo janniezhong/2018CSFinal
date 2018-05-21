@@ -12,8 +12,8 @@ public class GovBuilding extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 
-	public GovBuilding(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public GovBuilding() {
+		super("govbuilding.jpg");
 		super.setSize(2);
 		super.setRevenue(4);
 		super.setHappiness(-6);

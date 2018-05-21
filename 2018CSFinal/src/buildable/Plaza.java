@@ -12,8 +12,8 @@ public class Plaza extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 
-	public Plaza(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public Plaza() {
+		super("plaza.jpg");
 		super.setSize(4);
 		super.setRevenue(4);
 		super.setHappiness(2);

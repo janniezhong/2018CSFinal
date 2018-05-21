@@ -12,8 +12,8 @@ public class Library extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 	
-	public Library(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public Library() {
+		super("library.gif");
 		super.setSize(2);
 		super.setRevenue(1);
 		super.setHappiness(4);

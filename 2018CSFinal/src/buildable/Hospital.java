@@ -12,8 +12,8 @@ public class Hospital extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 	
-	public Hospital(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public Hospital() {
+		super("hospital.png");
 		super.setSize(3);
 		super.setRevenue(1);
 		super.setHappiness(6);

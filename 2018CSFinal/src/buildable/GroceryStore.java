@@ -12,8 +12,8 @@ public class GroceryStore extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 
-	public GroceryStore(String buildingImg, int xLoc, int yLoc) {
-		super(buildingImg, xLoc, yLoc);
+	public GroceryStore() {
+		super("grocerystore.jpg");
 		super.setSize(2);
 		super.setRevenue(1);
 		super.setHappiness(3);

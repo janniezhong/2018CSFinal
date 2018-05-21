@@ -13,8 +13,8 @@ public class Bank extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 
-	public Bank(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public Bank() {
+		super("bank.png");
 		super.setSize(2);
 		super.setRevenue(6);
 		super.setHappiness(-2);

@@ -12,8 +12,8 @@ public class PowerPlant extends Building{
 	private ArrayList<Building> posBuildings;
 	private ArrayList<Building> negBuildings;
 
-	public PowerPlant(String buildingName, int xLoc, int yLoc) {
-		super(buildingName, xLoc, yLoc);
+	public PowerPlant() {
+		super("powerplant.jpg");
 		super.setSize(2);
 		super.setRevenue(8);
 		super.setHappiness(-4);
