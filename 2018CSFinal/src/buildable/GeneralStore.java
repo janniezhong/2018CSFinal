@@ -13,7 +13,7 @@ public class GeneralStore extends Building{
 	private ArrayList<Building> negBuildings;
 
 	public GeneralStore() {
-		super("generalstore.jpg");
+		super("generalstore.jpg", 13);
 		super.setRevenue(2);
 		super.setHappiness(3);
 		super.setCost(25);

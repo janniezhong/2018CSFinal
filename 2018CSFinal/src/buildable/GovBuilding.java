@@ -13,7 +13,7 @@ public class GovBuilding extends Building{
 	private ArrayList<Building> negBuildings;
 
 	public GovBuilding() {
-		super("govbuilding.jpg");
+		super("govbuilding.jpg", 4);
 		super.setRevenue(4);
 		super.setHappiness(-6);
 		super.setCost(25);

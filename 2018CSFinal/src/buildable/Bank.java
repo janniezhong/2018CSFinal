@@ -14,7 +14,7 @@ public class Bank extends Building{
 	private ArrayList<Building> negBuildings;
 
 	public Bank() {
-		super("bank.png");
+		super("bank.png", 1);
 		super.setRevenue(6);
 		super.setHappiness(-2);
 		super.setCost(25);

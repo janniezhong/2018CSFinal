@@ -14,9 +14,11 @@ public abstract class Building {
 	private int happiness;
 	private int revenue;
 	private int x, y;
+	private int id;
 	
-	public Building (String buildingName) {
+	public Building (String buildingName, int id) {
 		imageLoc = buildingName;
+		this.id = id;
 	}
 	
 	
@@ -51,6 +53,10 @@ public abstract class Building {
 	// increments or decrements revenue by specified stage
 	public void changeRevBy(int stage) {
 		revenue += stage;
+	}
+	
+	public int getID() {
+		return id;
 	}
 	
 	
