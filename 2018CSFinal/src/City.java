@@ -9,17 +9,21 @@ import buildable.Building;
 public class City {
 	
 	private int scenario;
-	ArrayList<Building> buildings;
-	int[][] grid;
+	Building[][] grid;
 
 	public City(int size, int whichScene) {
 		scenario = whichScene;
-		buildings = new ArrayList<>();
-		grid = new int[size][size];
+		grid = new Building[size][size];
+	}
+	
+	public void addBuilding(Building b, int xGrid, int yGrid) {
+		if (grid[yGrid][xGrid] != null) {
+			grid[yGrid][xGrid] = b;
+		}
 	}
 	
 	
-	
-	
-	
+	public Building[][] getCity() {
+		return grid;
+	}
 }
