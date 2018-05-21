@@ -3,8 +3,8 @@ import processing.core.PImage;
 
 /**
  * 
- * @author arleenliu
- * @version 5/11/18
+ * @author janniezhong
+ * @version 5/20/18
  */
 public class CityPanel {
 

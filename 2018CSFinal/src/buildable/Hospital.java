@@ -14,7 +14,6 @@ public class Hospital extends Building{
 	
 	public Hospital() {
 		super("hospital.png");
-		super.setSize(3);
 		super.setRevenue(1);
 		super.setHappiness(6);
 		

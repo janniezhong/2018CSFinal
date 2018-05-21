@@ -9,7 +9,6 @@ import processing.core.PImage;
  *	@version 5/15/18
  */
 public abstract class Building {
-	private int size;
 	private String imageLoc;
 	private int costToBuy;
 	private int happiness;
@@ -20,14 +19,6 @@ public abstract class Building {
 		imageLoc = buildingName;
 	}
 	
-	public int getSize() {
-		return size;
-	}
-	
-	
-	public void setSize(int x) {
-		size = x;
-	}
 	
 	public void setRevenue(int x) {
 		revenue = x;

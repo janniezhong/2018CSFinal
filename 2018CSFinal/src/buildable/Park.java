@@ -14,7 +14,6 @@ public class Park extends Building{
 	
 	public Park() {
 		super("park.jpg");
-		super.setSize(4);
 		super.setRevenue(-4);
 		super.setHappiness(9);
 		

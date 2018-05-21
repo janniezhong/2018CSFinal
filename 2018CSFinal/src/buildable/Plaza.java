@@ -14,7 +14,6 @@ public class Plaza extends Building{
 
 	public Plaza() {
 		super("plaza.jpg");
-		super.setSize(4);
 		super.setRevenue(4);
 		super.setHappiness(2);
 		

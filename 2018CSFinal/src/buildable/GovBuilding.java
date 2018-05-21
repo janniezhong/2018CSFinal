@@ -14,7 +14,6 @@ public class GovBuilding extends Building{
 
 	public GovBuilding() {
 		super("govbuilding.jpg");
-		super.setSize(2);
 		super.setRevenue(4);
 		super.setHappiness(-6);
 		

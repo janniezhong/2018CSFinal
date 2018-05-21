@@ -14,7 +14,6 @@ public class GroceryStore extends Building{
 
 	public GroceryStore() {
 		super("grocerystore.jpg");
-		super.setSize(2);
 		super.setRevenue(1);
 		super.setHappiness(3);
 		

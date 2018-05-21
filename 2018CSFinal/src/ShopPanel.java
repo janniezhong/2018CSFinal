@@ -50,7 +50,7 @@ public class ShopPanel {
 	}
 
 	public void highlight(int rect, PApplet drawer) {
-		if (rect < buildingLoc.length && rect > 0) {
+		if (rect < buildingLoc.length && rect >= 0) {
 			Rectangle x = buildingLoc[rect];
 			drawer.strokeWeight(6);
 			drawer.stroke(66, 244, 209);

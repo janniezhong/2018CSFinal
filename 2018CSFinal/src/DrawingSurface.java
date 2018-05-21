@@ -65,8 +65,11 @@ public class DrawingSurface extends PApplet {
 			shop.resize(width/10, height/10);
 			image(shop, (float)(width*(CityPanel.size-1)/CityPanel.size), (float)(height*(CityPanel.size-1)/CityPanel.size));
 
+			if (buildingSelect > -1) {
+				city.buildingToAdd(buildingSelect);
+			}
 
-
+			buildingSelect = -1;
 		} else if (screenNum == 5) {
 
 			shop.draw(this);
@@ -213,8 +216,6 @@ public class DrawingSurface extends PApplet {
 			if (a.contains(p)) {
 				screenNum = 4;
 				
-				buildingSelect = -1;
-
 			}
 			
 			
