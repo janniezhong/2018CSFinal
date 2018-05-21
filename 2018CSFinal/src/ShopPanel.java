@@ -12,7 +12,7 @@ import buildable.*;
  */
 public class ShopPanel {
 	private PImage editable;
-	private Building[] buildingTypes = { new Bank(), new Factory(), new GasStation(), new GeneralStore(),
+	private Building[] buildingTypes = {new Bank(), new Factory(), new GasStation(), new GeneralStore(),
 			new GovBuilding(), new GroceryStore(), new Hospital(), new Library(), new Neighborhood(), new Park(),
 			new Plaza(), new PowerPlant(), new School() };
 	private Rectangle[] buildingLoc = new Rectangle[buildingTypes.length];
