@@ -13,6 +13,13 @@ public class CityPanel {
 	public static int size;
 	private int scenario;
 	
+	// 1 = nuclear
+	// 2 = zombie apocalypse
+	// 3 = AI takeover
+	// 4 = meteor crash
+	// 5 = tsunami
+	// 6 = sun burned out
+	
 	private int nextBuilding;
 
 	public CityPanel(int scene) {
@@ -22,9 +29,27 @@ public class CityPanel {
 	}
 
 	public void draw(PApplet drawer) {
-		editable = drawer.loadImage("cityBackground.jpg");
-		editable.resize(drawer.width, drawer.height);
-
+		
+		if (scenario == 1) {
+			editable = drawer.loadImage("ScenarioAITakeover.jpg");
+			editable.resize(drawer.width, drawer.height);
+		} else if (scenario == 2) {
+			editable = drawer.loadImage("ScenarioApocalypse.jpg");
+			editable.resize(drawer.width, drawer.height);
+		} else if (scenario == 3) {
+			editable = drawer.loadImage("ScenarioAITakeover.jpg");
+			editable.resize(drawer.width, drawer.height);
+		} else if (scenario == 4) {
+			editable = drawer.loadImage("ScenarioMeteorCrash.jpg");
+			editable.resize(drawer.width, drawer.height);
+		} else if (scenario == 5) {
+			editable = drawer.loadImage("ScenarioTsunami.jpg");
+			editable.resize(drawer.width, drawer.height);
+		} else if (scenario == 6) {
+			editable = drawer.loadImage("ScenarioSun.jpg");
+			editable.resize(drawer.width, drawer.height);
+		}
+		
 		drawer.image(editable, 0, 0);
 
 		drawer.stroke(255);
