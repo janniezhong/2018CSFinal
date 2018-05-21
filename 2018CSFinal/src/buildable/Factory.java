@@ -13,7 +13,7 @@ public class Factory extends Building{
 	private ArrayList<Building> negBuildings;
 
 	public Factory() {
-		super("factory.gif");
+		super("factory.gif", 2);
 		super.setRevenue(7);
 		super.setHappiness(-3);
 		super.setCost(30);

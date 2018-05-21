@@ -13,7 +13,7 @@ public class PowerPlant extends Building{
 	private ArrayList<Building> negBuildings;
 
 	public PowerPlant() {
-		super("powerplant.jpg");
+		super("powerplant.jpg", 11);
 		super.setRevenue(3);
 		super.setHappiness(5);
 		super.setCost(30);

@@ -13,7 +13,7 @@ public class School extends Building{
 	private ArrayList<Building> negBuildings;
 
 	public School() {
-		super("school.jpg");
+		super("school.jpg", 12);
 		super.setRevenue(-2);
 		super.setHappiness(7);
 		super.setCost(25);

@@ -13,7 +13,7 @@ public class Library extends Building{
 	private ArrayList<Building> negBuildings;
 	
 	public Library() {
-		super("library.gif");
+		super("library.gif", 7);
 		super.setRevenue(1);
 		super.setHappiness(4);
 		super.setCost(25);

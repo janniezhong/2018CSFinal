@@ -10,10 +10,14 @@ public class City {
 	
 	private int scenario;
 	Building[][] grid;
+	private int netRevenue;
+	private int netHappiness;
 
 	public City(int size, int whichScene) {
 		scenario = whichScene;
 		grid = new Building[size][size];
+		netRevenue = 0;
+		netHappiness = 0;
 	}
 	
 	public void addBuilding(Building b, int xGrid, int yGrid) {

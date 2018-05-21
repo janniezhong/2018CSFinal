@@ -13,7 +13,7 @@ public class Hospital extends Building{
 	private ArrayList<Building> negBuildings;
 	
 	public Hospital() {
-		super("hospital.png");
+		super("hospital.png", 6);
 		super.setRevenue(1);
 		super.setHappiness(6);
 		super.setCost(30);

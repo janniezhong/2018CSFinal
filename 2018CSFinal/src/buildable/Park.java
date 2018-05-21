@@ -13,7 +13,7 @@ public class Park extends Building{
 	private ArrayList<Building> negBuildings;
 	
 	public Park() {
-		super("park.jpg");
+		super("park.jpg", 9);
 		super.setRevenue(-4);
 		super.setHappiness(9);
 		super.setCost(30);
