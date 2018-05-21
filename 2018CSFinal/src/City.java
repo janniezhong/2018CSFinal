@@ -10,6 +10,8 @@ public class City {
 	
 	private int scenario;
 	Building[][] grid;
+	private int netRevenue;
+	private int 
 
 	public City(int size, int whichScene) {
 		scenario = whichScene;
@@ -17,7 +19,7 @@ public class City {
 	}
 	
 	public void addBuilding(Building b, int xGrid, int yGrid) {
-		if (grid[yGrid][xGrid] != null) {
+		if (grid[yGrid][xGrid] == null) {
 			grid[yGrid][xGrid] = b;
 		}
 	}
