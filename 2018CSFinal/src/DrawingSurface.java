@@ -159,6 +159,7 @@ public class DrawingSurface extends PApplet {
 			if (a.contains(p)) {
 				screenNum = 4;
 				city = new CityPanel(1);
+				
 			} else if (b.contains(p)) {
 				screenNum = 4;
 				city = new CityPanel(2);
