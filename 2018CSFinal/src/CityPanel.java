@@ -1,3 +1,6 @@
+import java.awt.Point;
+
+import buildable.*;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -12,6 +15,9 @@ public class CityPanel {
 	private City city;
 	public static int size;
 	private int scenario;
+	private Building[] buildingTypes = { new Bank(), new Factory(), new GasStation(), new GeneralStore(),
+			new GovBuilding(), new GroceryStore(), new Hospital(), new Library(), new Neighborhood(), new Park(),
+			new Plaza(), new PowerPlant(), new School() };
 	
 	// 1 = nuclear
 	// 2 = zombie apocalypse
@@ -25,6 +31,7 @@ public class CityPanel {
 	public CityPanel(int scene) {
 		size = 10;
 		scenario = scene;
+		City c = new City(size, scene);
 
 	}
 
@@ -63,5 +70,15 @@ public class CityPanel {
 	
 	public void buildingToAdd(int i) {
 		nextBuilding = i;
+	}
+	
+	
+	public boolean insertBuilding(Point p) {
+		if (nextBuilding >=0) {
+			city.addBuilding(buildingTypes[nextBuilding], (int)p.getX(), (int)p.getY());
+			return true;
+		}else {
+			return false;
+		}
 	}
 }

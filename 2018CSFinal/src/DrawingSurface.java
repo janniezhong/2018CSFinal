@@ -28,7 +28,7 @@ public class DrawingSurface extends PApplet {
 	private ShopPanel shop; //5
 
 	public DrawingSurface() {
-		screenNum = 1;
+		screenNum = 4;
 		runSketch();
 		pressedTimes = 0;
 		buildingSelect = -1;
@@ -65,11 +65,9 @@ public class DrawingSurface extends PApplet {
 			shop.resize(width/10, height/10);
 			image(shop, (float)(width*(CityPanel.size-1)/CityPanel.size), (float)(height*(CityPanel.size-1)/CityPanel.size));
 
-			if (buildingSelect > -1) {
-				city.buildingToAdd(buildingSelect);
-			}
-
-			buildingSelect = -1;
+			
+			city.buildingToAdd(buildingSelect);
+	
 		} else if (screenNum == 5) {
 
 			shop.draw(this);
@@ -186,6 +184,19 @@ public class DrawingSurface extends PApplet {
 
 			if (a.contains(p)) {
 				screenNum = 5;
+			} else {
+				int scaledX = mouseX;
+				int scaledY = mouseY;
+				
+				scaledX = (int)(scaledX *10.0/width);
+				scaledY = (int)(scaledY *10.0/height);
+				Point insert = new Point (scaledX, scaledY);
+				
+				if (city.insertBuilding(insert)) {
+					buildingSelect = -1;
+				}
+
+
 			}
 			
 		} else if (screenNum == 5) {
