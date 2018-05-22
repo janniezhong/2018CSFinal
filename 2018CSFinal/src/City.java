@@ -13,24 +13,48 @@ public class City {
 	Building[][] grid;
 	private int netRevenue;
 	private int netHappiness;
+	private int rem;
 
 	public City(int size, int whichScene) {
 		scenario = whichScene;
 		grid = new Building[size][size];
 		netRevenue = 0;
 		netHappiness = 0;
+		rem = 0;
 	}
 
 	public boolean addBuilding(Building b, int xGrid, int yGrid) {
 		if (grid[yGrid][xGrid] == null) {
 			grid[yGrid][xGrid] = b;
 
-			//checkSurroundings(b, yGrid, xGrid);
+			checkSurroundings(b, yGrid, xGrid);
 
 			return true;
 		} else {
 			return false;
 		}
+	}
+	
+	// call every 5 seconds in draw method to update revenue
+	public void calcRevenue() {
+		int prevHappiness = netHappiness;
+		
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[0].length; j++) {
+				netRevenue += grid[i][j].getRevenue();
+				netHappiness += grid[i][j].getHappiness();
+			}
+		}
+		
+		int stage = (netHappiness + rem - prevHappiness) / 50;
+		rem = (netHappiness + rem - prevHappiness) % 50;
+		
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[0].length; j++) {
+				grid[i][j].changeRevBy(stage);
+			}
+		}
+		
 	}
 
 	private void checkSurroundings(Building b, int y, int x) {
