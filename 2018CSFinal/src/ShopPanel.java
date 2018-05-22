@@ -10,9 +10,14 @@ import buildable.*;
  * @author jzhong672
  * @version 5/17/18
  */
+
+// may have a bug from the buildingTypes because when you pass in new buildings
+// you arent creating a new instance of it, instead you're passing in the same
+// object over and over again. To avoid, use the ID numbers assigned to the
+// buildings instead.
 public class ShopPanel {
 	private PImage editable;
-	private Building[] buildingTypes = {new Bank(), new Factory(), new GasStation(), new GeneralStore(),
+	private Building[] buildingTypes = { new Bank(), new Factory(), new GasStation(), new GeneralStore(),
 			new GovBuilding(), new GroceryStore(), new Hospital(), new Library(), new Neighborhood(), new Park(),
 			new Plaza(), new PowerPlant(), new School() };
 	private Rectangle[] buildingLoc = new Rectangle[buildingTypes.length];
