@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 
 import buildable.Building;
+
 /**
  * 
  * @author jzhong672
  * @version 5/12/18
  */
 public class City {
-	
+
 	private int scenario;
 	Building[][] grid;
 	private int netRevenue;
@@ -19,14 +20,228 @@ public class City {
 		netRevenue = 0;
 		netHappiness = 0;
 	}
-	
-	public void addBuilding(Building b, int xGrid, int yGrid) {
+
+	public boolean addBuilding(Building b, int xGrid, int yGrid) {
 		if (grid[yGrid][xGrid] == null) {
 			grid[yGrid][xGrid] = b;
+
+			checkSurroundings(b, yGrid, xGrid);
+
+			return true;
+		} else {
+			return false;
 		}
 	}
-	
-	
+
+	private void checkSurroundings(Building b, int y, int x) {
+		if (b.getID() == 1) { // bank
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 4 || 
+								grid[y + i][x + j].getID() == 8) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 5 || grid[y + i][x + j].getID() == 13 || 
+								grid[y + i][x + j].getID() == 10) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 2) { // factory
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 11 || grid[y + i][x + j].getID() == 3) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 7 || grid[y + i][x + j].getID() == 9 || 
+								grid[y + i][x + j].getID() == 4 || grid[y + i][x + j].getID() == 12) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 3) { // gas station
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 4 || 
+								grid[y + i][x + j].getID() == 13 || grid[y + i][x + j].getID() == 12 || 
+								grid[y + i][x + j].getID() == 8) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 9 || grid[y + i][x + j].getID() == 11) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 4) { // gov building
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 7 || grid[y + i][x + j].getID() == 10) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 12 || grid[y + i][x + j].getID() == 2 || 
+								grid[y + i][x + j].getID() == 11 || grid[y + i][x + j].getID() == 9) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 5) { // grocery store
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 1 || grid[y + i][x + j].getID() == 8 || 
+								grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 13) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 6 || grid[y + i][x + j].getID() == 10) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 6) { // hospital
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 12 || grid[y + i][x + j].getID() == 2) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 10 || grid[y + i][x + j].getID() == 5 || 
+								grid[y + i][x + j].getID() == 13 || grid[y + i][x + j].getID() == 7) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 7) { // library
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 12 || grid[y + i][x + j].getID() == 4 || 
+								grid[y + i][x + j].getID() == 10 || grid[y + i][x + j].getID() == 8) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 4 || grid[y + i][x + j].getID() == 2 || 
+								grid[y + i][x + j].getID() == 6) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 8) { // neighborhood
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 12 || grid[y + i][x + j].getID() == 9) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 11 || 
+								grid[y + i][x + j].getID() == 4) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 9) { // park
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 8 || grid[y + i][x + j].getID() == 12 || 
+								grid[y + i][x + j].getID() == 7) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 3 || grid[y + i][x + j].getID() == 2 || 
+								grid[y + i][x + j].getID() == 11 || grid[y + i][x + j].getID() == 4 || 
+								grid[y + i][x + j].getID() == 13) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 10) { // plaza
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 1 || grid[y + i][x + j].getID() == 7 || 
+								grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 12 || 
+								grid[y + i][x + j].getID() == 4 || grid[y + i][x + j].getID() == 13 ||
+								grid[y + i][x + j].getID() == 8) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 5 || grid[y + i][x + j].getID() == 6) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 11) { // powerplant
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 3) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 9 || grid[y + i][x + j].getID() == 12 || 
+								grid[y + i][x + j].getID() == 8) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 12) { // school
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 10 || grid[y + i][x + j].getID() == 7 || 
+								grid[y + i][x + j].getID() == 8 || grid[y + i][x + j].getID() == 9) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 4 || 
+								grid[y + i][x + j].getID() == 11) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+
+		} else if (b.getID() == 13) { // general store
+			
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null) {
+						if (grid[y + i][x + j].getID() == 1 || grid[y + i][x + j].getID() == 12 || 
+								grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 3 || 
+								grid[y + i][x + j].getID() == 10) {
+							b.changeRevBy(1);
+						} else if (grid[y + i][x + j].getID() == 7 || grid[y + i][x + j].getID() == 9 || 
+								grid[y + i][x + j].getID() == 6) {
+							b.changeRevBy(-1);
+						}	
+					}
+				}
+			}
+			
+		}
+	}
+
 	public Building[][] getCity() {
 		return grid;
 	}
