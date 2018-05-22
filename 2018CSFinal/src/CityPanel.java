@@ -31,14 +31,14 @@ public class CityPanel {
 	public CityPanel(int scene) {
 		size = 10;
 		scenario = scene;
-		City c = new City(size, scene);
+		city = new City(size, scene);
 
 	}
 
 	public void draw(PApplet drawer) {
 		
 		if (scenario == 1) {
-			editable = drawer.loadImage("ScenarioAITakeover.jpg");
+			editable = drawer.loadImage("ScenarioNuclear.jpg");
 			editable.resize(drawer.width, drawer.height);
 		} else if (scenario == 2) {
 			editable = drawer.loadImage("ScenarioApocalypse.jpg");
@@ -74,11 +74,12 @@ public class CityPanel {
 	
 	
 	public boolean insertBuilding(Point p) {
-		if (nextBuilding >=0) {
-			city.addBuilding(buildingTypes[nextBuilding], (int)p.getX(), (int)p.getY());
-			return true;
-		}else {
+		
+		if (p != null && nextBuilding >= 0 && buildingTypes[nextBuilding] != null) {
+			return city.addBuilding(buildingTypes[nextBuilding], (int)p.getX(), (int)p.getY());
+		} else {
 			return false;
 		}
 	}
+	
 }

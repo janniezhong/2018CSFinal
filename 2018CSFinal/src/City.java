@@ -25,7 +25,7 @@ public class City {
 		if (grid[yGrid][xGrid] == null) {
 			grid[yGrid][xGrid] = b;
 
-			checkSurroundings(b, yGrid, xGrid);
+			//checkSurroundings(b, yGrid, xGrid);
 
 			return true;
 		} else {

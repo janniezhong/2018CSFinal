@@ -28,7 +28,7 @@ public class DrawingSurface extends PApplet {
 	private ShopPanel shop; //5
 
 	public DrawingSurface() {
-		screenNum = 4;
+		screenNum = 1;
 		runSketch();
 		pressedTimes = 0;
 		buildingSelect = -1;
