@@ -92,7 +92,40 @@ public class CityPanel {
 	public boolean insertBuilding(Point p) {
 		
 		if (p != null && nextBuilding >= 0 && buildingTypes[nextBuilding] != null) {
-			return city.addBuilding(buildingTypes[nextBuilding], (int)p.getX(), (int)p.getY());
+
+			Building b;
+			if (nextBuilding == 0) {
+				b = new Bank();
+			} else if (nextBuilding == 1) {
+				b = new Factory();
+			} else if (nextBuilding == 2) {
+				b = new GasStation();
+			} else if (nextBuilding == 3) {
+				b = new GeneralStore();
+			} else if (nextBuilding == 4) {
+				b = new GovBuilding();
+			} else if (nextBuilding == 5) {
+				b = new GroceryStore();
+			} else if (nextBuilding == 6) {
+				b = new Hospital();
+			} else if (nextBuilding == 7) {
+				b = new Library();
+			} else if (nextBuilding == 8) {
+				b = new Neighborhood();
+			} else if (nextBuilding == 9) {
+				b = new Park();
+			} else if (nextBuilding == 10) {
+				b = new Plaza();
+			} else if (nextBuilding == 11) {
+				b = new PowerPlant();
+			} else if (nextBuilding == 12){
+				b = new School();
+			} else {
+				b = null;
+			}
+			
+	
+			return city.addBuilding(b, (int)p.getX(), (int)p.getY());
 		} else {
 			return false;
 		}
