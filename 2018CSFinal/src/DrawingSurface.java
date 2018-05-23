@@ -135,11 +135,8 @@ public class DrawingSurface extends PApplet {
 				screenNum = 2;
 			} else if (b.contains(p)) {
 				screenNum = 3;		
-				//delay(700);
 
 			}
-
-
 
 		} else if (screenNum == 2) {
 
@@ -234,9 +231,6 @@ public class DrawingSurface extends PApplet {
 				screenNum = 4;
 				
 			}
-			
-			
-			
 
 		}
 	}

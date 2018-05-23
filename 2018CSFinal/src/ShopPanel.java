@@ -17,9 +17,9 @@ import buildable.*;
 // buildings instead.
 public class ShopPanel {
 	private PImage editable;
-	private Building[] buildingTypes = { new Bank(), new Factory(), new GasStation(), new GeneralStore(),
-			new GovBuilding(), new GroceryStore(), new Hospital(), new Library(), new Neighborhood(), new Park(),
-			new Plaza(), new PowerPlant(), new School() };
+	private Building[] buildingTypes = { new Bank(), new Factory(), new GasStation(), 
+			new GovBuilding(), new GroceryStore(), new Hospital(), new Library(), new Neighborhood(),
+			new Park(), new Plaza(), new PowerPlant(), new School(), new GeneralStore()};
 	private Rectangle[] buildingLoc = new Rectangle[buildingTypes.length];
 
 	public void draw(PApplet drawer) {

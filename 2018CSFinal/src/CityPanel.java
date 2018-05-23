@@ -16,9 +16,10 @@ public class CityPanel {
 	private String name;
 	public static int size;
 	private int scenario;
-	private Building[] buildingTypes = { new Bank(), new Factory(), new GasStation(), new GeneralStore(),
-			new GovBuilding(), new GroceryStore(), new Hospital(), new Library(), new Neighborhood(), new Park(),
-			new Plaza(), new PowerPlant(), new School() };
+	private Building[] buildingTypes = {new Bank(), new Factory(), new GasStation(),
+			new GovBuilding(), new GroceryStore(), new Hospital(), new Library(), 
+			new Neighborhood(), new Park(), new Plaza(), new PowerPlant(), new School(), 
+			new GeneralStore(),};
 	
 	// 1 = nuclear
 	// 2 = zombie apocalypse
@@ -101,25 +102,25 @@ public class CityPanel {
 			} else if (nextBuilding == 2) {
 				b = new GasStation();
 			} else if (nextBuilding == 3) {
-				b = new GeneralStore();
-			} else if (nextBuilding == 4) {
 				b = new GovBuilding();
-			} else if (nextBuilding == 5) {
+			} else if (nextBuilding == 4) {
 				b = new GroceryStore();
-			} else if (nextBuilding == 6) {
+			} else if (nextBuilding == 5) {
 				b = new Hospital();
-			} else if (nextBuilding == 7) {
+			} else if (nextBuilding == 6) {
 				b = new Library();
-			} else if (nextBuilding == 8) {
+			} else if (nextBuilding == 7) {
 				b = new Neighborhood();
-			} else if (nextBuilding == 9) {
+			} else if (nextBuilding == 8) {
 				b = new Park();
-			} else if (nextBuilding == 10) {
+			} else if (nextBuilding == 9) {
 				b = new Plaza();
-			} else if (nextBuilding == 11) {
+			} else if (nextBuilding == 10) {
 				b = new PowerPlant();
-			} else if (nextBuilding == 12){
+			} else if (nextBuilding == 11) {
 				b = new School();
+			} else if (nextBuilding == 12){
+				b = new GeneralStore();
 			} else {
 				b = null;
 			}
