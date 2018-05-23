@@ -20,14 +20,14 @@ public class CityPanel {
 			new GovBuilding(), new GroceryStore(), new Hospital(), new Library(), 
 			new Neighborhood(), new Park(), new Plaza(), new PowerPlant(), new School(), 
 			new GeneralStore(),};
-	
+
 	// 1 = nuclear
 	// 2 = zombie apocalypse
 	// 3 = AI takeover
 	// 4 = meteor crash
 	// 5 = tsunami
 	// 6 = sun burned out
-	
+
 	private int nextBuilding;
 
 	public CityPanel(int scene, String name) {
@@ -59,7 +59,7 @@ public class CityPanel {
 			editable = drawer.loadImage("ScenarioSun.jpg");
 			editable.resize(drawer.width, drawer.height);
 		}
-		
+
 		drawer.image(editable, 0, 0);
 
 		drawer.stroke(255);
@@ -68,13 +68,31 @@ public class CityPanel {
 			drawer.line(0, i * (drawer.height / size), drawer.width, i * (drawer.height / size));
 			drawer.line(i * (drawer.width / size), 0, i * (drawer.width / size), drawer.height);
 		}
-		
+
+		//running through the array and drawing each of the images
+
+		for (int i = 0; i < currState.length; i++) {
+			for (int j = 0; j < currState[0].length;j++) {
+
+				int getYLoc = (int)(i/10.0*drawer.height);
+				int getXLoc = (int)(j/10.0*drawer.width);
+
+				if (currState[i][j] != null) {
+					PImage building = currState[i][j].getImage(drawer);
+					building.resize(drawer.width/size, drawer.height/size);
+
+					drawer.image(building, getXLoc, getYLoc);
+				}
+
+			}
+		}
+
 		drawer.pushStyle();
 		drawer.fill(234);
 		drawer.rect(5, 5, 150, 20);
 		drawer.rect(200, 5, 150, 20);
 		drawer.rect(drawer.width - 205, 5, 200, 20);
-		
+
 		drawer.fill(0);
 		drawer.strokeWeight(2);
 		drawer.textSize(15); 
@@ -83,15 +101,15 @@ public class CityPanel {
 		drawer.text(name, drawer.width - 102, 20);
 		drawer.popStyle();
 	}
-	
-	
+
+
 	public void buildingToAdd(int i) {
 		nextBuilding = i;
 	}
-	
-	
+
+
 	public boolean insertBuilding(Point p) {
-		
+
 		if (p != null && nextBuilding >= 0 && buildingTypes[nextBuilding] != null) {
 
 			Building b;
@@ -124,12 +142,12 @@ public class CityPanel {
 			} else {
 				b = null;
 			}
-			
-	
+
+
 			return city.addBuilding(b, (int)p.getX(), (int)p.getY());
 		} else {
 			return false;
 		}
 	}
-	
+
 }
