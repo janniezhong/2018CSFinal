@@ -28,6 +28,7 @@ public class DrawingSurface extends PApplet {
 	private InstructionsPanel instructions; // 2
 	private InitPanel init;// 3
 	private ShopPanel shop; //5
+	private LosePanel loseP; //6
 
 	public DrawingSurface() {
 		screenNum = 1;
@@ -41,6 +42,7 @@ public class DrawingSurface extends PApplet {
 		instructions = new InstructionsPanel();
 		init = new InitPanel();
 		shop = new ShopPanel();
+		loseP = new LosePanel();
 
 		
 		
@@ -73,6 +75,11 @@ public class DrawingSurface extends PApplet {
 
 			
 			city.buildingToAdd(buildingSelect);
+			
+			if (city.getRevenue() < 0) {
+				screenNum = 6;
+			}
+			
 	
 		} else if (screenNum == 5) {
 
@@ -85,6 +92,8 @@ public class DrawingSurface extends PApplet {
 			//rect((int)(630/700.0*width), (int)(25/600.0*height), (int)(50/700.0*width), (int)(25/600.0*height));
 
 
+		} else if (screenNum == 6) {
+			loseP.draw(this);
 		}
 
 	}

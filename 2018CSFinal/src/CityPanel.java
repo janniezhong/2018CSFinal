@@ -93,7 +93,7 @@ public class CityPanel {
 		}
 		
 		
-		if (count == 30) {
+		if (count == 60) {
 			city.calcRevenue();
 			count = 0;
 		}
@@ -162,6 +162,10 @@ public class CityPanel {
 		} else {
 			return false;
 		}
+		
+	}
+	public int getRevenue() {
+		return city.getRevenue();
 	}
 
 }
