@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import buildable.*;
 import processing.core.PApplet;
 import processing.core.PImage;
 

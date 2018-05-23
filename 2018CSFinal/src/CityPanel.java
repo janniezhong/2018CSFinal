@@ -39,7 +39,7 @@ public class CityPanel {
 	}
 
 	public void draw(PApplet drawer) {
-		
+		Building[][] currState = city.getCity();
 		if (scenario == 1) {
 			editable = drawer.loadImage("ScenarioNuclear.jpg");
 			editable.resize(drawer.width, drawer.height);
