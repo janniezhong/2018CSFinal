@@ -3,6 +3,7 @@ package buildable;
 import java.util.ArrayList;
 
 /**
+ * This class models a Factory building to be placed in the city.
  * 
  * @author arleenliu
  * @version 5/22/18

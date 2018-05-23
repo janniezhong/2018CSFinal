@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * 
+ * This class models a Plaza structure, which consists of entertainment and other leisurely activities, to be placed in the city.
+ * 
  * @author arleenliu
  * @version 5/22/18
  */

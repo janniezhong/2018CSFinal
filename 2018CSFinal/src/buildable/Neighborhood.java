@@ -6,6 +6,8 @@ import processing.core.PImage;
 
 /**
  * 
+ * This class models a Neighborhood, representative of 3 houses, to be placed in the city.
+ * 
  * @author arleenliu
  * @version 5/22/18
  * 
