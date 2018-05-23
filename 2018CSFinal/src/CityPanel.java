@@ -13,6 +13,7 @@ public class CityPanel {
 
 	private PImage editable;
 	private City city;
+	private String name;
 	public static int size;
 	private int scenario;
 	private Building[] buildingTypes = { new Bank(), new Factory(), new GasStation(), new GeneralStore(),
@@ -28,10 +29,11 @@ public class CityPanel {
 	
 	private int nextBuilding;
 
-	public CityPanel(int scene) {
+	public CityPanel(int scene, String name) {
 		size = 10;
 		scenario = scene;
 		city = new City(size, scene);
+		this.name = name;
 
 	}
 
@@ -65,6 +67,20 @@ public class CityPanel {
 			drawer.line(0, i * (drawer.height / size), drawer.width, i * (drawer.height / size));
 			drawer.line(i * (drawer.width / size), 0, i * (drawer.width / size), drawer.height);
 		}
+		
+		drawer.pushStyle();
+		drawer.fill(234);
+		drawer.rect(5, 5, 150, 20);
+		drawer.rect(200, 5, 150, 20);
+		drawer.rect(drawer.width - 205, 5, 200, 20);
+		
+		drawer.fill(0);
+		drawer.strokeWeight(2);
+		drawer.textSize(15); 
+		drawer.text("Revenue:     " + city.getRevenue(), 60, 20);
+		drawer.text("Happiness:     " + city.getHappiness(), 60 + 205, 20);
+		drawer.text(name, drawer.width - 102, 20);
+		drawer.popStyle();
 	}
 	
 	

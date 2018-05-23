@@ -19,13 +19,13 @@ public class DrawingSurface extends PApplet {
 	private int pressedTimes;
 	private int buildingSelect;
 	private int nextBuilding;
-
+	private String name = "";
 
 	private IntroPanel intro; // 1
 	private CityPanel city; // 4
 	private InstructionsPanel instructions; // 2
 	private InitPanel init;// 3
-	private ShopPanel shop; //5
+	private ShopPanel shop; // 5
 
 	public DrawingSurface() {
 		screenNum = 1;
@@ -40,34 +40,34 @@ public class DrawingSurface extends PApplet {
 		init = new InitPanel();
 		shop = new ShopPanel();
 
-		
-		
-		
 	}
 
 	public void draw() {
 		if (mousePressed && pressedTimes > 0) {
 			mouseClicked();
-			//pressedTimes = 0;
+			// pressedTimes = 0;
 		}
 
-		
 		if (screenNum == 1) {
 			intro.draw(this);
 		} else if (screenNum == 2) {
 			instructions.draw(this);
 		} else if (screenNum == 3) {
 			init.draw(this);
+			fill(255);
+			strokeWeight(2);
+			textSize(15);
+			text(name, 400, 185);
 		} else if (screenNum == 4) {
 			city.draw(this);
 
 			PImage shop = loadImage("shopButton.png");
-			shop.resize(width/10, height/10);
-			image(shop, (float)(width*(CityPanel.size-1)/CityPanel.size), (float)(height*(CityPanel.size-1)/CityPanel.size));
+			shop.resize(width / 10, height / 10);
+			image(shop, (float) (width * (CityPanel.size - 1) / CityPanel.size),
+					(float) (height * (CityPanel.size - 1) / CityPanel.size));
 
-			
 			city.buildingToAdd(buildingSelect);
-	
+
 		} else if (screenNum == 5) {
 
 			shop.draw(this);
@@ -76,8 +76,8 @@ public class DrawingSurface extends PApplet {
 			stroke(0);
 			strokeWeight(2);
 
-			//rect((int)(630/700.0*width), (int)(25/600.0*height), (int)(50/700.0*width), (int)(25/600.0*height));
-
+			// rect((int)(630/700.0*width), (int)(25/600.0*height), (int)(50/700.0*width),
+			// (int)(25/600.0*height));
 
 		}
 
@@ -85,7 +85,7 @@ public class DrawingSurface extends PApplet {
 
 	public void initPanel() {
 		editable = loadImage("InitPanel.jpg");
-		editable.resize(width,height);
+		editable.resize(width, height);
 		image(editable, 0, 0);
 
 	}
@@ -129,78 +129,81 @@ public class DrawingSurface extends PApplet {
 			if (a.contains(p)) {
 				screenNum = 2;
 			} else if (b.contains(p)) {
-				screenNum = 3;		
-				//delay(700);
+				screenNum = 3;
+				// delay(700);
 
 			}
 
-
-
 		} else if (screenNum == 2) {
 
-			Rectangle a = new Rectangle((int)(630/700.0*width), (int)(550/600.0*height), (int)(60/700.0*width), (int)(30/600.0*height));
+			Rectangle a = new Rectangle((int) (630 / 700.0 * width), (int) (550 / 600.0 * height),
+					(int) (60 / 700.0 * width), (int) (30 / 600.0 * height));
 
 			if (a.contains(p)) {
 				screenNum = 1;
 			}
 
-		} else if (screenNum == 3) {			
+		} else if (screenNum == 3) {
 
-			Rectangle a = new Rectangle((int)(209/700.0*width), (int)(285/600.0*height), (int)(95/700.0*width), (int)(52/600.0*width));
-			Rectangle b = new Rectangle((int)(372/700.0*width), (int)(282/600.0*height), (int)(90/700.0*width), (int)(60/600.0*width));
-			Rectangle c = new Rectangle((int)(535/700.0*width), (int)(243/600.0*height), (int)(70/700.0*width), (int)(90/600.0*width));
-			Rectangle d = new Rectangle((int)(209/700.0*width), (int)(465/600.0*height), (int)(90/700.0*width), (int)(52/600.0*width));
-			Rectangle e = new Rectangle((int)(380/700.0*width), (int)(465/600.0*height), (int)(88/700.0*width), (int)(52/600.0*width));
-			Rectangle f = new Rectangle((int)(522/700.0*width), (int)(465/600.0*height), (int)(95/700.0*width), (int)(52/600.0*width));
-
+			Rectangle a = new Rectangle((int) (209 / 700.0 * width), (int) (285 / 600.0 * height),
+					(int) (95 / 700.0 * width), (int) (52 / 600.0 * width));
+			Rectangle b = new Rectangle((int) (372 / 700.0 * width), (int) (282 / 600.0 * height),
+					(int) (90 / 700.0 * width), (int) (60 / 600.0 * width));
+			Rectangle c = new Rectangle((int) (535 / 700.0 * width), (int) (243 / 600.0 * height),
+					(int) (70 / 700.0 * width), (int) (90 / 600.0 * width));
+			Rectangle d = new Rectangle((int) (209 / 700.0 * width), (int) (465 / 600.0 * height),
+					(int) (90 / 700.0 * width), (int) (52 / 600.0 * width));
+			Rectangle e = new Rectangle((int) (380 / 700.0 * width), (int) (465 / 600.0 * height),
+					(int) (88 / 700.0 * width), (int) (52 / 600.0 * width));
+			Rectangle f = new Rectangle((int) (522 / 700.0 * width), (int) (465 / 600.0 * height),
+					(int) (95 / 700.0 * width), (int) (52 / 600.0 * width));
 
 			if (a.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(1);
-				
+				city = new CityPanel(1, name);
+
 			} else if (b.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(2);
+				city = new CityPanel(2, name);
 
 			} else if (c.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(3);
+				city = new CityPanel(3, name);
 
 			} else if (d.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(4);
+				city = new CityPanel(4, name);
 
 			} else if (e.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(5);
+				city = new CityPanel(5, name);
 
 			} else if (f.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(6);
+				city = new CityPanel(6, name);
 
 			}
 		} else if (screenNum == 4) {
-			Rectangle a = new Rectangle((int)(width*9/10.0),(int)(height*9/10.0), width/10, height/10);
+			Rectangle a = new Rectangle((int) (width * 9 / 10.0), (int) (height * 9 / 10.0), width / 10, height / 10);
 
 			if (a.contains(p)) {
 				screenNum = 5;
 			} else {
 				int scaledX = mouseX;
 				int scaledY = mouseY;
-				
-				scaledX = (int)(scaledX *10.0/width);
-				scaledY = (int)(scaledY *10.0/height);
-				Point insert = new Point (scaledX, scaledY);
-				
+
+				scaledX = (int) (scaledX * 10.0 / width);
+				scaledY = (int) (scaledY * 10.0 / height);
+				Point insert = new Point(scaledX, scaledY);
+
 				if (city.insertBuilding(insert)) {
 					buildingSelect = -1;
 				}
 
-
 			}
-			
+
 		} else if (screenNum == 5) {
-			
+
 			int horiz = (int) (width * 3.0 / 20);
 			int vert = (int) (height * 7.0 / 24);
 			for (int i = 0; i < 13; i++) {
@@ -210,10 +213,9 @@ public class DrawingSurface extends PApplet {
 					horiz = (int) (width * 3.0 / 20);
 				}
 
-				
 				Rectangle b = new Rectangle(horiz, vert, width / 10, height / 10);
 
-				if(b.contains(p)) {
+				if (b.contains(p)) {
 					buildingSelect = i;
 				}
 				// drawer.strokeWeight(10);
@@ -222,17 +224,31 @@ public class DrawingSurface extends PApplet {
 				horiz += width * 3.0 / 10;
 
 			}
-			
-			Rectangle a = new Rectangle((int)(630/700.0*width), (int)(25/600.0*height), (int)(50/700.0*width), (int)(25/600.0*height));
+
+			Rectangle a = new Rectangle((int) (630 / 700.0 * width), (int) (25 / 600.0 * height),
+					(int) (50 / 700.0 * width), (int) (25 / 600.0 * height));
 
 			if (a.contains(p)) {
 				screenNum = 4;
-				
-			}
-			
-			
-			
 
+			}
+
+		}
+	}
+
+	public void keyPressed() {
+		if (screenNum == 3) {
+			name += key;
+
+			if (name.length() >= 2) {
+				if (key == BACKSPACE) {
+					name = name.substring(0, name.length() - 2);
+				}
+
+				if (name.length() > 15) {
+					name = name.substring(0, name.length() - 1);
+				}
+			}
 		}
 	}
 

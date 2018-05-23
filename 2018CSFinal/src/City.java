@@ -269,4 +269,12 @@ public class City {
 	public Building[][] getCity() {
 		return grid;
 	}
+	
+	public int getRevenue() {
+		return netRevenue;
+	}
+	
+	public int getHappiness() {
+		return netHappiness;
+	}
 }

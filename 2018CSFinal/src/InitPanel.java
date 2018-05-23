@@ -15,6 +15,7 @@ public class InitPanel {
 		editable.resize(drawer.width,drawer.height);
 		
 		drawer.image(editable, 0, 0);
+		
 	}
 	
 }
