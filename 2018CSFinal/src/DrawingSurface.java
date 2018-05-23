@@ -31,7 +31,7 @@ public class DrawingSurface extends PApplet {
 	private LosePanel loseP; //6
 
 	public DrawingSurface() {
-		screenNum = 1;
+		screenNum = 6;
 		runSketch();
 		pressedTimes = 0;
 		buildingSelect = -1;
@@ -94,6 +94,10 @@ public class DrawingSurface extends PApplet {
 
 		} else if (screenNum == 6) {
 			loseP.draw(this);
+//			noFill();
+//			stroke(0);
+//			rect((int)(290.0/700*width), (int)(505.0/600.0*height), (int)(110/700.0*width), (int)(50/600.0*height));
+//			
 		}
 
 	}
@@ -242,6 +246,13 @@ public class DrawingSurface extends PApplet {
 				
 			}
 
+		} else if (screenNum == 6) {
+			Rectangle a = new Rectangle((int)(290.0/700*width), (int)(505.0/600.0*height), (int)(110/700.0*width), (int)(50/600.0*height));
+			if (a.contains(p)) {
+				screenNum = 1;
+				
+			}
+		
 		}
 	}
 	
@@ -260,7 +271,4 @@ public class DrawingSurface extends PApplet {
 			}
 		}
 	}
-
-
-
 }
