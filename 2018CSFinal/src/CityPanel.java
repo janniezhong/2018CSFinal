@@ -29,6 +29,8 @@ public class CityPanel {
 	// 6 = sun burned out
 
 	private int nextBuilding;
+	
+	private int count;
 
 	public CityPanel(int scene, String name) {
 		size = 10;
@@ -39,6 +41,9 @@ public class CityPanel {
 	}
 
 	public void draw(PApplet drawer) {
+		
+		count++;
+		
 		Building[][] currState = city.getCity();
 		if (scenario == 1) {
 			editable = drawer.loadImage("ScenarioNuclear.jpg");
@@ -85,6 +90,12 @@ public class CityPanel {
 				}
 
 			}
+		}
+		
+		
+		if (count == 30) {
+			city.calcRevenue();
+			count = 0;
 		}
 
 		drawer.pushStyle();
@@ -142,9 +153,12 @@ public class CityPanel {
 			} else {
 				b = null;
 			}
-
+			
+			city.changeRevenue(-b.getCost());
 
 			return city.addBuilding(b, (int)p.getX(), (int)p.getY());
+			
+			
 		} else {
 			return false;
 		}
