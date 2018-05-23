@@ -4,6 +4,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
+ *This class serves as the foundation and base model for any kind of specific building created to be placed in the city.
  * 
  * @author arleenliu
  *	@version 5/22/18
@@ -38,6 +39,11 @@ public abstract class Building {
 		return drawer.loadImage(imageLoc);
 	}
 	
+	/**
+	 * This method returns the cost to purchase one building of this specific type.
+	 * 
+	 * @return cost The amount of money required to buy one building
+	 */
 	public int getCost() {
 		return costToBuy;
 	}
