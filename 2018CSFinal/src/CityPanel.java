@@ -162,6 +162,10 @@ public class CityPanel {
 		} else {
 			return false;
 		}
+		
+	}
+	public int getRevenue() {
+		return city.getRevenue();
 	}
 
 }
