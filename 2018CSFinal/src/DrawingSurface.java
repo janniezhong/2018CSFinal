@@ -19,6 +19,7 @@ public class DrawingSurface extends PApplet {
 	private int pressedTimes;
 	private int buildingSelect;
 	private int nextBuilding;
+	private String name = "";
 
 
 	private IntroPanel intro; // 1
@@ -58,6 +59,10 @@ public class DrawingSurface extends PApplet {
 			instructions.draw(this);
 		} else if (screenNum == 3) {
 			init.draw(this);
+			fill(255);
+			strokeWeight(2);
+			textSize(15);
+			text(name, 400, 185);
 		} else if (screenNum == 4) {
 			city.draw(this);
 
@@ -156,27 +161,27 @@ public class DrawingSurface extends PApplet {
 
 			if (a.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(1);
+				city = new CityPanel(1, name);
 				
 			} else if (b.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(2);
+				city = new CityPanel(2, name);
 
 			} else if (c.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(3);
+				city = new CityPanel(3, name);
 
 			} else if (d.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(4);
+				city = new CityPanel(4, name);
 
 			} else if (e.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(5);
+				city = new CityPanel(5, name);
 
 			} else if (f.contains(p)) {
 				screenNum = 4;
-				city = new CityPanel(6);
+				city = new CityPanel(6, name);
 
 			}
 		} else if (screenNum == 4) {
@@ -235,5 +240,23 @@ public class DrawingSurface extends PApplet {
 
 		}
 	}
+	
+	public void keyPressed() {
+		if (screenNum == 3) {
+			name += key;
+
+			if (name.length() >= 2) {
+				if (key == BACKSPACE) {
+					name = name.substring(0, name.length() - 2);
+				}
+
+				if (name.length() > 15) {
+					name = name.substring(0, name.length() - 1);
+				}
+			}
+		}
+	}
+
+
 
 }
