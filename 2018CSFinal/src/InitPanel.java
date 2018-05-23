@@ -2,7 +2,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
- * 
+ * A class representing the initialization screen.
  * @author arleenliu
  * @version 5/11/18
  */

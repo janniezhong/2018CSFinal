@@ -2,7 +2,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
- * 
+ * A class representing the instructions screen.
  * @author arleenliu
  * @version 5/9/18
  */

@@ -6,7 +6,7 @@ import java.awt.Rectangle;
 import buildable.*;
 
 /**
- * 
+ * A class representing the shop screen. Highlights the selected building to buy.
  * @author jzhong672
  * @version 5/22/18
  */

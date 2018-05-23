@@ -7,7 +7,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
- * 
+ * A class displaying the correct screen and controls all mouse interaction.
  * @author jzhong672
  * @version 5/22/18
  *

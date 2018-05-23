@@ -3,7 +3,7 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 /**
- * 
+ * A class representing the lose screen.
  * @author jzhong672
  * @version 5/22/18
  */

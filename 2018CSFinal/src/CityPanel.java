@@ -5,7 +5,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
- * 
+ * A class drawing the city graphically based on the scenario and buildings currently in the city. 
  * @author janniezhong
  * @version 5/22/18
  */

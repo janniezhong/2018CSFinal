@@ -2,7 +2,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
- * 
+ * A class representing the introduction screen.
  * @author jzhong672
  * @version 5/8/18
  */

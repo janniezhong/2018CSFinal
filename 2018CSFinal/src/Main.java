@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 
 import processing.awt.PSurfaceAWT;
 /**
- * 
+ * A class running the main method.
  * @author jzhong672
  * @version 5/7/18
  */

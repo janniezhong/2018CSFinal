@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import buildable.Building;
 
 /**
- * 
+ * A class representing the city and the buildings within the city itself. Checks to change revenue from each of the buildings based on their location.
  * @author arleenliu
  * @version 5/22/18
  */
