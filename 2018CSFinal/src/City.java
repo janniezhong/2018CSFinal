@@ -18,7 +18,7 @@ public class City {
 	public City(int size, int whichScene) {
 		scenario = whichScene;
 		grid = new Building[size][size];
-		netRevenue = 0;
+		netRevenue = 100;
 		netHappiness = 0;
 		rem = 0;
 	}
@@ -33,6 +33,11 @@ public class City {
 		} else {
 			return false;
 		}
+	}
+	
+	// should call every time a purchase is made
+	public void changeRevenue(int amount) {
+		netRevenue += amount;
 	}
 	
 	// call every 5 seconds in draw method to update revenue

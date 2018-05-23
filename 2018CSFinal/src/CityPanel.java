@@ -77,8 +77,8 @@ public class CityPanel {
 		drawer.fill(0);
 		drawer.strokeWeight(2);
 		drawer.textSize(15); 
-		drawer.text("Revenue:     " + city.getRevenue(), 60, 20);
-		drawer.text("Happiness:     " + city.getHappiness(), 60 + 205, 20);
+		drawer.text("Revenue:     " + city.getRevenue(), 80, 20);
+		drawer.text("Happiness:     " + city.getHappiness(), 275, 20);
 		drawer.text(name, drawer.width - 102, 20);
 		drawer.popStyle();
 	}
