@@ -6,8 +6,8 @@ import processing.core.PImage;
 
 /**
  * 
- * @author jzhong672
- * @version 5/11/18
+ * @author arleenliu
+ * @version 5/22/18
  * 
  */
 public class Neighborhood extends Building{

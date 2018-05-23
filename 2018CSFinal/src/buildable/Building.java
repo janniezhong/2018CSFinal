@@ -5,8 +5,8 @@ import processing.core.PImage;
 
 /**
  * 
- * @author jzhong672
- *	@version 5/15/18
+ * @author arleenliu
+ *	@version 5/22/18
  */
 public abstract class Building {
 	private String imageLoc;
