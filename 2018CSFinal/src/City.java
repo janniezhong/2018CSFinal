@@ -71,8 +71,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 4
 								|| grid[y + i][x + j].getID() == 8) {
 							b.changeRevBy(1);
@@ -88,8 +88,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 11 || grid[y + i][x + j].getID() == 3) {
 							b.changeRevBy(1);
 						} else if (grid[y + i][x + j].getID() == 7 || grid[y + i][x + j].getID() == 9
@@ -104,8 +104,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 4
 								|| grid[y + i][x + j].getID() == 13 || grid[y + i][x + j].getID() == 12
 								|| grid[y + i][x + j].getID() == 8) {
@@ -121,8 +121,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 7 || grid[y + i][x + j].getID() == 10) {
 							b.changeRevBy(1);
 						} else if (grid[y + i][x + j].getID() == 12 || grid[y + i][x + j].getID() == 2
@@ -137,8 +137,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 1 || grid[y + i][x + j].getID() == 8
 								|| grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 13) {
 							b.changeRevBy(1);
@@ -153,8 +153,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 12 || grid[y + i][x + j].getID() == 2) {
 							b.changeRevBy(1);
 						} else if (grid[y + i][x + j].getID() == 10 || grid[y + i][x + j].getID() == 5
@@ -169,8 +169,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 12 || grid[y + i][x + j].getID() == 4
 								|| grid[y + i][x + j].getID() == 10 || grid[y + i][x + j].getID() == 8) {
 							b.changeRevBy(1);
@@ -186,8 +186,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 12 || grid[y + i][x + j].getID() == 9) {
 							b.changeRevBy(1);
 						} else if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 11
@@ -202,8 +202,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 8 || grid[y + i][x + j].getID() == 12
 								|| grid[y + i][x + j].getID() == 7) {
 							b.changeRevBy(1);
@@ -220,8 +220,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 1 || grid[y + i][x + j].getID() == 7
 								|| grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 12
 								|| grid[y + i][x + j].getID() == 4 || grid[y + i][x + j].getID() == 13
@@ -238,8 +238,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 3) {
 							b.changeRevBy(1);
 						} else if (grid[y + i][x + j].getID() == 9 || grid[y + i][x + j].getID() == 12
@@ -254,8 +254,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 10 || grid[y + i][x + j].getID() == 7
 								|| grid[y + i][x + j].getID() == 8 || grid[y + i][x + j].getID() == 9) {
 							b.changeRevBy(1);
@@ -271,8 +271,8 @@ public class City {
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-					if (!(i == 0 && j == 0) && grid[y + i][x + j] != null && y + i >= 0 && x + j >= 0
-							&& y + i < grid.length && x + j < grid[0].length) {
+					if (y + i >= 0 && x + j >= 0 && y + i < grid.length && x + j < grid[0].length && !(i == 0 && j == 0)
+							&& grid[y + i][x + j] != null) {
 						if (grid[y + i][x + j].getID() == 1 || grid[y + i][x + j].getID() == 12
 								|| grid[y + i][x + j].getID() == 2 || grid[y + i][x + j].getID() == 3
 								|| grid[y + i][x + j].getID() == 10) {
