@@ -8,13 +8,8 @@ import buildable.*;
 /**
  * 
  * @author jzhong672
- * @version 5/17/18
+ * @version 5/22/18
  */
-
-// may have a bug from the buildingTypes because when you pass in new buildings
-// you arent creating a new instance of it, instead you're passing in the same
-// object over and over again. To avoid, use the ID numbers assigned to the
-// buildings instead.
 public class ShopPanel {
 	private PImage editable;
 	private Building[] buildingTypes = {new Bank(), new Factory(), new GasStation(), 
@@ -53,7 +48,6 @@ public class ShopPanel {
 		}
 
 	}
-
 	public void highlight(int rect, PApplet drawer) {
 		if (rect < buildingLoc.length && rect >= 0) {
 			

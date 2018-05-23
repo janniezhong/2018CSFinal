@@ -5,7 +5,7 @@ import processing.core.PImage;
 /**
  * 
  * @author jzhong672
- * @version 5/16/18
+ * @version 5/22/18
  */
 public class LosePanel {
 

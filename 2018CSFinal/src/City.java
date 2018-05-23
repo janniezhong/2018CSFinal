@@ -4,8 +4,8 @@ import buildable.Building;
 
 /**
  * 
- * @author jzhong672
- * @version 5/12/18
+ * @author arleenliu
+ * @version 5/22/18
  */
 public class City {
 
@@ -22,7 +22,14 @@ public class City {
 		netHappiness = 0;
 		rem = 0;
 	}
-
+	/**
+	 * Adds a building to the grid in the specified x, y location
+	 * @param b Building to add to the city
+	 * @param xGrid x-location in the grid to place city
+	 * @param yGrid y-location in the grid to place city
+	 * @return whether the building was successfully placed
+	 * @post may add a building to the city
+	 */
 	public boolean addBuilding(Building b, int xGrid, int yGrid) {
 		if (grid[yGrid][xGrid] == null) {
 			grid[yGrid][xGrid] = b;
@@ -35,12 +42,18 @@ public class City {
 		}
 	}
 
-	// should call every time a purchase is made
+	/**
+	 * Changes the current total amount of money
+	 * @param amount amount to change the total amount of money by
+	 */
 	public void changeRevenue(int amount) {
 		netRevenue += amount;
 	}
 
-	// call every 5 seconds in draw method to update revenue
+	/**
+	 * Updates the rate of revenue increase for the city based on buildings and their locations
+	 * @post may change the amount of revenue a building makes based on its surroundings
+	 */
 	public void calcRevenue() {
 		int prevHappiness = netHappiness;
 
