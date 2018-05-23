@@ -31,7 +31,7 @@ public class DrawingSurface extends PApplet {
 	private LosePanel loseP; //6
 
 	public DrawingSurface() {
-		screenNum = 6;
+		screenNum = 1;
 		runSketch();
 		pressedTimes = 0;
 		buildingSelect = -1;
